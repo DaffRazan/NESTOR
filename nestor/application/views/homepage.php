@@ -32,8 +32,8 @@
 
 <div class="copyright text-center text-white">
   <div class="container">
-    <h3>Copyright &copy;2019</h3><br>
-    <h3>Projek RPL Kelompok D</h3>
+    <h5>Copyright &copy;2019</h5><br>
+    <small>Projek RPL Kelompok D</small>
   </div>
 </div>
 

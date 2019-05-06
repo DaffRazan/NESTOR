@@ -10,6 +10,6 @@ class User extends CI_Controller
         $this->session->userdata('username')])->row_array();
 
         $this->load->view('navbar_user', $data);
-        $this->load->view('homepage');
+        $this->load->view('homepage_user');
     }
 }
