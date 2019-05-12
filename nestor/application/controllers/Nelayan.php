@@ -3,12 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Nelayan extends CI_Controller
 {
-
-
     public function __construct()
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('User_model');
     }
 
     public function index()
@@ -36,6 +35,7 @@ class Nelayan extends CI_Controller
 
                 $data = [
                     'username' => $user['username'],
+                    'id' => $user['id']
                 ];
                 $this->session->set_userdata($data);
                 redirect('user');
@@ -61,7 +61,7 @@ class Nelayan extends CI_Controller
         $this->form_validation->set_rules(
             'password1',
             'Password',
-            'required|trim|min_length[5]|matches[password2]',
+            'required|trim|min_length[6]|matches[password2]',
             [
                 'matches' => 'Password tidak sama dengan konfirmasi password',
                 'min_length' => 'Kata sandi minimal 6 karakter'
@@ -74,6 +74,7 @@ class Nelayan extends CI_Controller
         } else {
             $data = [
                 'username' => htmlspecialchars($this->input->post('username', true)),
+                'image' => 'default.jpg',
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
             ];
@@ -91,7 +92,7 @@ class Nelayan extends CI_Controller
         $this->session->unset_userdata('username');
 
         $this->session->set_flashdata('pesan', '<div class="alert alert-primary" role="alert">
-        Anda berhasil logout
+        Anda berhasil keluar
     </div>');
         redirect('nelayan/index');
     }
