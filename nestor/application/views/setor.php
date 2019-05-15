@@ -23,7 +23,20 @@
                     <!--row added with js -->
                 </div>
                 <div id="fieldSetor">
-
+                    <!-- <div class="form-row">
+                        <div class="col">
+                            <label for="">Jenis (ex:tuna)</label>
+                            <input name="jenis[]" type="text" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="">Berat (kg)</label>
+                            <input name="berat[]" type="number" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="">Harga (Rp)</label>
+                            <input name="harga[]" type="number" class="form-control" required>
+                        </div>
+                    </div> -->
                 </div>
                 <button class="btn btn-dark btn-block" type="submit" name="submit">Submit</button>
             </form>
@@ -47,7 +60,6 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
 
     <!-- -->
     <script>
