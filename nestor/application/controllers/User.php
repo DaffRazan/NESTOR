@@ -10,6 +10,7 @@ class User extends CI_Controller
         $this->load->model('User_model');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $this->load->helper(array('form', 'url'));
     }
 
     public function index()
@@ -23,6 +24,72 @@ class User extends CI_Controller
             $this->load->view('homepage_user', $data);
         } else {
             redirect("home");
+        }
+    }
+
+    public function ubahPassword()
+    {
+        $data['title'] = 'Nestor - Ubah Password';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $this->form_validation->set_rules(
+            'current_password',
+            'Password Sekarang',
+            'required|trim',
+            [
+                'required' => 'Password sekarang harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'newpassword1',
+            'Password Baru',
+            'required|trim|min_length[6]|matches[newpassword2]',
+            [
+                'required' => 'Password Baru harus diisi'
+            ]
+        );
+        $this->form_validation->set_rules(
+            'newpassword2',
+            'Konfirmasi Password Baru',
+            'required|trim|min_length[6]|matches[newpassword1]',
+            [
+                'required' => 'Konfirmasi Password Baru harus diisi'
+            ]
+        );
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('navbar_user', $data);
+            $this->load->view('ubah_password', $data);
+        } else {
+            $current_password = $this->input->post('current_password');
+            $new_password = $this->input->post('newpassword1');
+
+            if (!password_verify($current_password, $data['users']['password'])) {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                Password sekarang salah!
+                </div>');
+                redirect('user/ubahpassword');
+            } else {
+                if ($current_password == $new_password) {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                    Password baru tidak boleh sama dengan password sekarang!
+                    </div>');
+                    redirect('user/ubahpassword');
+                } else {
+                    //password ganti
+                    $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+
+                    $this->db->set('password', $password_hash);
+                    $this->db->where('username', $this->session->userdata('username'));
+                    $this->db->update('users');
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                    Password berhasil diubah!
+                    </div>');
+                    redirect('user/profilUser');
+                }
+            }
         }
     }
 
@@ -102,7 +169,7 @@ class User extends CI_Controller
         } else { //kalau benar
             $this->User_model->editData();
             $this->session->set_flashdata('pesan_profil', '<div class="alert alert-success" role="alert">
-            Profil anda sudah disimpan!
+            Profil kapal sudah disimpan!
         </div>');
             redirect('user/profil');
         }
@@ -114,7 +181,36 @@ class User extends CI_Controller
         $data['users'] = $this->db->get_where('users', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        $this->load->view('navbar_user', $data);
-        $this->load->view('profil_user');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('navbar_user', $data);
+            $this->load->view('profil_user', $data);
+        } else {
+            $email = $this->input->post('email');
+
+            //cek jika ada gambar yang akan diupload
+            $upload_image = $_FILES['image']['name'];
+
+            if ($upload_image) {
+                $config['allowed_types'] = 'jpg|png';
+                $config['max_size']      = '2048';
+                $config['upload_path'] = 'assets/img/profile/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('image')) {
+                    $new_image = $this->upload->data('file_name');
+                    $this->db->set('image', $new_image);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            $this->db->where('email', $email);
+            $this->db->update('users');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Gambar berhasil diubah!
+            </div>');
+            redirect('user/profilUser');
+        }
     }
 }

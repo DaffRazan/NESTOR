@@ -14,11 +14,17 @@
             </div>
             <div class="card-body">
                 <h4 class="card-title text-center text-primary pb-5">Data Detail Profil Kapal & Pemilik Kapal</h4>
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <?= $this->session->flashdata('pesan_profil'); ?>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
+
                         <a href="<?= base_url('user/editProfil'); ?>" class="btn btn-success mb-4">Edit Profil</a>
-                        <?= $this->session->flashdata('pesan_profil'); ?>
                     </div>
                 </div>
 
