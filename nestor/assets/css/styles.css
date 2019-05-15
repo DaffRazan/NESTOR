@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Lato';
 }
@@ -320,9 +324,7 @@ a:active {
 }
 
 .profile-pic {
-	width: 250px;
 	height: 200px;
-	border-radius: 50%;
 }
 
 .about-section {
@@ -330,4 +332,10 @@ a:active {
 	height: 100%;
 	width: 100%;
 	background-color: cadetblue;
+}
+
+.carousel {
+	width: 50%;
+	height: auto;
+	padding: 0;
 }

@@ -1,17 +1,20 @@
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center">
     <div class="container">
-        <h1 class="mb-0">NeStor</h1><br>
-        <img class="profile-pic img-fluid mb-5 d-block mx-auto img-circle" src="https://www.mongabay.co.id/wp-content/uploads/2018/04/nelayan-pantai-depok-2.jpg" alt="">
+        <h1 class="mb-0 pt-5" style="color:yellow;">NeStor</h1><br>
+        <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
         <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['username']; ?></h2>
+        <?= $this->session->flashdata('pesan'); ?>
     </div>
 </header>
 
 <div class="copyright text-center text-white">
     <div class="container">
-        <h5>Copyright &copy;2019</h5><br>
-        <small>Projek RPL Kelompok D</small>
+        <h3>Hubungi Kami</h3>
+        <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
+        <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
+        <p>&copy;2019 Nestor All Rights Reserved</p>
     </div>
 </div>
 
