@@ -181,17 +181,29 @@ class User extends CI_Controller
         $data['users'] = $this->db->get_where('users', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        if ($this->form_validation->run() == FALSE) {
+        $this->load->view('navbar_user', $data);
+        $this->load->view('profil_user', $data);
+    }
+
+    public function ubahPhoto()
+    {
+        $data['title'] = 'Nestor - Ubah Photo User';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $this->form_validation->set_rules('username', 'username', 'trim');
+
+        if ($this->form_validation->run() == false) {
             $this->load->view('navbar_user', $data);
-            $this->load->view('profil_user', $data);
+            $this->load->view('ubah_photo', $data);
         } else {
-            $email = $this->input->post('email');
+            $username = $this->input->post('username');
 
             //cek jika ada gambar yang akan diupload
-            $upload_image = $_FILES['image']['name'];
+            $upload_image = $_FILES['image'];
 
             if ($upload_image) {
-                $config['allowed_types'] = 'jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size']      = '2048';
                 $config['upload_path'] = 'assets/img/profile/';
 
@@ -205,12 +217,12 @@ class User extends CI_Controller
                 }
             }
 
-            $this->db->where('email', $email);
+            $this->db->where('username', $username);
             $this->db->update('users');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Gambar berhasil diubah!
-            </div>');
-            redirect('user/profilUser');
+                Gambar berhasil diubah!
+                </div>');
+            redirect('user/profiluser');
         }
     }
 }
