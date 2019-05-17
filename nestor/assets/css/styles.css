@@ -325,6 +325,7 @@ a:active {
 
 .profile-pic {
 	height: 200px;
+	border-radius: 50%;
 }
 
 .about-section {
