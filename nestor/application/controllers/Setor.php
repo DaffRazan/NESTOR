@@ -8,6 +8,7 @@ class Setor extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('Setor_model');
     }
 
     public function index()
@@ -19,6 +20,8 @@ class Setor extends CI_Controller
         $this->load->view('navbar_user', $data);
         $this->load->view('setor');
     }
+
+
 
     public function input_setoran()
     {
@@ -54,12 +57,25 @@ class Setor extends CI_Controller
         $data['users'] = $this->db->get_where('users', ['username' =>
         $this->session->userdata('username')])->row_array();
 
-        $this->db->where('id_user', $this->session->userdata('id'));
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->getAllSetoran();
+        }
 
-        $query = $this->db->get('setor');
+        //kalau mau cari data ikan
+        if ($this->input->post('keyword')) {
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor'] = $this->Setor_model->cariDataSetoran();
+            }
+        }
 
-        $data['setorIkan'] = $query->result();
         $this->load->view('navbar_user', $data);
         $this->load->view('riwayat_setoran', $data);
+    }
+
+    public function hapusSetoran($id_setor)
+    {
+        $this->Setor_model->hapusDataSetoran($id_setor);
+        $this->session->set_flashdata('flash', 'dihapus');
+        redirect('setor/riwayat_setoran');
     }
 }

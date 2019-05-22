@@ -9,12 +9,8 @@
             <div class="card-body">
                 <h4 class="card-title text-center text-primary">Form Data Setoran User</h4>
 
-                <?php if (empty($setorIkan)) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        Data Ikan tidak ditemukan.
-                    </div>
-                <?php endif; ?>
 
+<<<<<<< HEAD
                 <div class="row mt-5">
                     <div class="col-lg-6">
                         <!-- Search form -->
@@ -23,6 +19,18 @@
                             <i class="fas fa-search" aria-hidden="true"></i>
                         </form>
                     </div>
+=======
+
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <!-- Search form -->
+                        <form method="post" class="form-inline active-cyan-4">
+                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Cari riwayat setoran ikan..." name="keyword">
+                            <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+
+>>>>>>> DaffaBranch
                     <div class="col-lg-6">
                         <div class="dropdown float-right mb-4">
                             <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Urutkan berdasarkan
@@ -37,6 +45,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <table class="table text-white">
                     <thead>
                         <tr>
@@ -47,22 +56,57 @@
                             <th scope="col">Tanggal</th>
                             <th scope="col">Waktu</th>
                             <th scope="col">Ubah</th>
+=======
+                <?php if (empty($setor)) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        Data Ikan tidak ditemukan.
+                    </div>
+                <?php endif; ?>
 
-                        </tr>
-                    </thead>
+                <?php if ($this->session->flashdata('flash')) : ?>
+                    <div class="row mt-3 d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Data Setoran <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+>>>>>>> DaffaBranch
+
+                <?php if (!empty($setor)) : ?>
+                    <table class="table text-white">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Jenis</th>
+                                <th scope="col">Berat</th>
+                                <th scope="col">Harga</th>
+                                <th scope="col">Tanggal (YYYY-MM-DD)</th>
+                                <th scope="col">Waktu (WIB Zone)</th>
+                                <th scope="col">Akses Data</th>
+
+                            </tr>
+                        </thead>
+                    <?php endif; ?>
                     <tbody>
                         <?php
                         $i = 1;
-                        foreach ($setorIkan as $item) {
+                        foreach ($setor as $item) {
                             ?>
                             <tr>
                                 <th><?= $i++; ?></th>
-                                <td><?= ucfirst($item->jenis); ?></td>
-                                <td><?= $item->berat . " kg"; ?></td>
-                                <td><?= "Rp. " . $item->harga; ?></td>
-                                <td><?= $item->tanggal; ?></td>
-                                <td><?= $item->waktu; ?></td>
-                                <td><span class="badge badge-success mr-2">Edit</span><span class="badge badge-danger">Hapus</span></td>
+                                <td><?= ucfirst($item['jenis']); ?></td>
+                                <td><?= $item['berat'] . " kg"; ?></td>
+                                <td><?= "Rp. " . $item['harga']; ?></td>
+                                <td><?= $item['tanggal']; ?></td>
+                                <td><?= $item['waktu']; ?></td>
+                                <td>
+                                    <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
+                                </td>
 
                             </tr>
                         <?php
