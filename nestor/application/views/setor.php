@@ -1,6 +1,6 @@
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center">
-    <div class="container">
+    <div class=" container">
 
         <div class="card text-white bg-secondary mb-5">
             <div class="card-header text-center">

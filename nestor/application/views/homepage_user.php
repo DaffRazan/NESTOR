@@ -1,10 +1,12 @@
 <!-- Header -->
-<header class="masthead bg-primary text-white text-center">
+<header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg.jpg')">
     <div class="container">
         <h1 class="mb-0 pt-5" style="color:yellow;">NeStor</h1><br>
         <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
-        <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['username']; ?></h2>
+        <div class="container bg-primary" style="width:50%;">
+            <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['username']; ?></h2>
+        </div>
         <?= $this->session->flashdata('pesan'); ?>
     </div>
 </header>
