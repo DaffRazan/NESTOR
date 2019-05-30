@@ -25,7 +25,6 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-<<<<<<< HEAD
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/profil'); ?>">Profil Kapal</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
@@ -39,24 +38,6 @@
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#logoutModal" href="<?= base_url('nelayan/logout') ?>">Logout</a>
-=======
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('setor'); ?>"><i class="far fa-edit"></i> Setor</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('setor/riwayat_setoran'); ?>"><i class="fab fa-wpforms"></i> Riwayat Setoran</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/profil'); ?>"><i class="fas fa-ship"></i> Profil Kapal</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/profilUser'); ?>"><i class="fas fa-user"></i> Profil User</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('setor/displayGrafikHarga'); ?>"><i class="fas fa-chart-bar"></i> Grafik</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#logoutModal" href="<?= base_url('nelayan/logout') ?>"><i class="fas fa-sign-out-alt"></i> Keluar</a>
->>>>>>> YaumilBranch
                     </li>
 
                 </ul>
@@ -69,26 +50,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-<<<<<<< HEAD
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-=======
-                    <h5 class="modal-title" id="exampleModalLabel">Yakin ingin keluar dari sistem?</h5>
->>>>>>> YaumilBranch
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-<<<<<<< HEAD
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?= base_url('nelayan/logout'); ?>">Logout</a>
-=======
-                <div class="modal-body">Pilih "Ya" untuk konfirmasi keluar, pilih "Batalkan" untuk tetap dalam aplikasi</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batalkan</button>
-                    <a class="btn btn-primary" href="<?= base_url('nelayan/logout'); ?>">Ya</a>
->>>>>>> YaumilBranch
                 </div>
             </div>
         </div>
