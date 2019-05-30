@@ -85,7 +85,7 @@
                                 <td><?= $item['tanggal']; ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
-                                    <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
+                                    <?php if ($item['tanggal'] > date('Y-m-d')) : ?>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
                                     <?php endif; ?> </td>
                                 </td>
