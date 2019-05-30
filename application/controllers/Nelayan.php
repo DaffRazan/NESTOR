@@ -46,7 +46,7 @@ class Nelayan extends CI_Controller
                 redirect('nelayan/index');
             }
         } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-primary" role="alert">
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
             Username tidak valid
             </div>');
             redirect('nelayan/index');

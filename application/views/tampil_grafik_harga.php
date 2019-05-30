@@ -103,7 +103,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Harga Ikan di Pasar',
+                    text: 'Grafik Harga Ikan Hasil Setoran',
                     fontSize: 30
                 },
                 scales: {

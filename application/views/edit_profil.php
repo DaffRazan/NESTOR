@@ -19,26 +19,26 @@
                         <div class="col-lg-6">
                             <h3><b>Kapal</b></h3>
                             <div class="form-group">
-                                <label>Nama Kapal :</label>
+                                <label class="text-warning">Nama Kapal :</label>
                                 <input id="nama_kpl" class="form-control" style="width: 30%;" type=" text" name="nama_kpl" value="<?= $data_profil['nama_kpl']; ?>">
                                 <small class="text-danger"><?= form_error('nama_kpl'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label> Nomor Kapal :</label>
+                                <label class="text-warning"> Nomor Kapal :</label>
                                 <input id="no_kpl" class="form-control" style="width:30%;" type="text" name="no_kpl" value="<?= $data_profil['no_kpl']; ?>">
                                 <small class="text-danger"><?= form_error('no_kpl'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label> Umur Kapal :</label>
+                                <label class="text-warning"> Umur Kapal :</label>
                                 <input id="umur_kpl" class="form-control" style="width:30%;" type="text" name="umur_kpl" value="<?= $data_profil['umur_kpl']; ?>">
                             </div>
                             <div class="form-group">
-                                <label>Asal Negara :</label>
+                                <label class="text-warning">Asal Negara :</label>
                                 <input id="bendera" class="form-control" style="width:30%;" type="text" name="bendera" value="<?= $data_profil['bendera']; ?>">
                                 <small class="text-danger"><?= form_error('bendera'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label>Jumlah Anak Buah :</label>
+                                <label class="text-warning">Jumlah Anak Buah :</label>
                                 <input id="jum_ABK" class="form-control" style="width:30%;" type="number" name="jum_ABK" style="width: 300px;" value="<?= $data_profil['jum_ABK']; ?>">
                             </div>
                             <br>
@@ -46,31 +46,31 @@
                         <div class="col-lg-6">
                             <h3><b>Pemilik</b></h3>
                             <div class="form-group">
-                                <label>Nama Pemilik :</label>
+                                <label class="text-warning">Nama Pemilik :</label>
                                 <input id="nama_bos" class="form-control" style="width:30%;" type="text" name="nama_bos" value="<?= $data_profil['nama_bos']; ?>">
                                 <small class="text-danger"><?= form_error('nama_bos'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label>Alamat :</label>
+                                <label class="text-warning">Alamat :</label>
                                 <input id="alamat_bos" class="form-control" style="width:30%;" type="text" name="alamat_bos" value="<?= $data_profil['alamat_bos']; ?>">
                                 <small class="text-danger"><?= form_error('alamat_bos'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label>Umur :</label>
+                                <label class="text-warning">Umur :</label>
                                 <input id="umur_bos" class="form-control" style="width:30%;" type="text" name="umur_bos" value="<?= $data_profil['umur_bos']; ?>">
                             </div>
                             <div class="form-group">
-                                <label>Kewarganegaraan :</label>
+                                <label class="text-warning">Kewarganegaraan :</label>
                                 <input id="kewarganegaraan" class="form-control" style="width:30%;" type="text" name="kewarganegaraan" value="<?= $data_profil['kewarganegaraan']; ?>">
                                 <small class="text-danger"><?= form_error('kewarganegaraan'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label>Nomor Ponsel :</label>
+                                <label class="text-warning">Nomor Ponsel :</label>
                                 <input id="no_ponsel" class="form-control" style="width:30%;" type="text" name="no_ponsel" value="<?= $data_profil['no_ponsel']; ?>">
                                 <small class="text-danger"><?= form_error('no_ponsel'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label>Email :</label>
+                                <label class="text-warning">Email :</label>
                                 <input id="email" class="form-control" style="width:50%;" type="text" name="email" value="<?= $data_profil['email']; ?>">
                             </div>
                             <div class="col-lg-4">
