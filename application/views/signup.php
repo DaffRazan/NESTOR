@@ -27,7 +27,6 @@
                 <h2>Daftar Akun</h2>
                 <div class="form-row">
                     <label for="full-name">Username</label>
-<<<<<<< HEAD
                     <input type="text" name="username" id="username" class="input-text" placeholder="Your Name" value="<?= set_value('username'); ?>">
                     <small class="text-danger"><?= form_error('username'); ?></small>
                     <i class="fas fa-user"></i>
@@ -49,25 +48,6 @@
                     <input type="password" name="password2" id="password2" class="input-text" placeholder="Your Retype-Password">
                     <small class="text-danger"><?= form_error('password2'); ?></small>
                     <i class="fas fa-lock"></i>
-=======
-                    <input type="text" name="username" id="username" class="input-text" value="<?= set_value('username'); ?>"><i class="fas fa-user"></i>
-                    <small class="text-danger"><?= form_error('username'); ?></small>
-                </div>
-                <div class="form-row">
-                    <label for="your-email">Email</label>
-                    <input type="text" name="email" id="email" class="input-text mr-2" value="<?= set_value('email'); ?>"> <i class="fas fa-envelope"></i>
-                    <small class="text-danger"><?= form_error('email'); ?></small>
-                </div>
-                <div class="form-row">
-                    <label for="password">Password</label>
-                    <input type="password" name="password1" id="password1" class="input-text"> <i class="fas fa-lock"></i>
-                    <small class="text-danger"><?= form_error('password1'); ?></small>
-                </div>
-                <div class="form-row">
-                    <label for="password">Konfirmasi Password</label>
-                    <input type="password" name="password2" id="password2" class="input-text"><i class="fas fa-lock"></i>
-                    <small class="text-danger"><?= form_error('password2'); ?></small>
->>>>>>> YaumilBranch
                 </div>
                 <button type="submit" class="btn btn-success btn-user btn-block mb-4"> Daftar </button>
                 <p>Sudah daftar? <a href="<?= base_url('nelayan/index'); ?>">Masuk</a></p>
