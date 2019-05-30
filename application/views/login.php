@@ -21,17 +21,17 @@
         <div class="form-v5-content">
             <a href="<?= base_url('home'); ?>"><i class="fas fa-2x fa-arrow-left ml-2"></i></a>
             <form class="form-detail" action="<?= base_url('nelayan/index') ?>" method="post">
-                <h2>Masuk Akun</h2>
+                <h2>Masuk</h2>
                 <?= $this->session->flashdata('pesan'); ?>
                 <div class="form-row">
                     <label for="full-name">Username</label>
-                    <input type="text" name="username" id="username" class="input-text" placeholder="Your Name" value="<?= set_value('username'); ?>">
+                    <input type="text" name="username" id="username" class="input-text" value="<?= set_value('username'); ?>">
                     <small class="text-danger"><?= form_error('username'); ?></small>
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="form-row">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="input-text" placeholder="Your Password">
+                    <input type="password" name="password" id="password" class="input-text">
                     <small class="text-danger"><?= form_error('password'); ?></small>
                     <i class="fas fa-lock"></i>
                 </div>

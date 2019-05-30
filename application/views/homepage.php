@@ -46,7 +46,7 @@
             untuk para nelayan agar dapat memudahkan pekerjaan mereka dalam menyetor hasil tangkapan ikan dan makhluk laut lainnya ke dalam website. Dengan begitu, apabila nelayan memasukkan data setoran ke dalam website ini, data tidak akan hilang karena tersimpan ke dalam database (sistem).</p>
         </div>
         <div class="col-lg-4 mr-auto text-justify text-white">
-          <p class="lead"> Data dijamin secure karena menggunakan password yang dienkripsi. NeStor juga dapat menampung informasi profil nelayan berupa data diri nelayan, ABK, Kapal,
+          <p class="lead"> Data dijamin aman karena menggunakan password yang dienkripsi. NeStor juga menampung informasi profil nelayan berupa data diri nelayan, ABK, Kapal,
             serta identitas lainnya. Akun ini dikelola oleh Bos Nelayan perkapal.
           </p><br>
         </div>
@@ -62,7 +62,7 @@
       <h3>Hubungi Kami</h3>
       <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
       <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
-      <p>&copy;2019 Nestor All Rights Reserved</p>
+      <p>&copy;Nestor <?= date('Y'); ?> All Rights Reserved</p>
     </div>
   </div>
 

@@ -64,10 +64,10 @@ class Nelayan extends CI_Controller
             'required|trim|min_length[6]|matches[password2]',
             [
                 'matches' => 'Password tidak sama dengan konfirmasi password',
-                'min_length' => 'Kata sandi minimal 6 karakter'
+                'min_length' => 'Password minimal 6 karakter'
             ]
         );
-        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password2]');
+        $this->form_validation->set_rules('password2', ' Konfirmasi Password', 'required|trim|matches[password2]');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('signup');

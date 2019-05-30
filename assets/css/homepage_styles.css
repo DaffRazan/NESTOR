@@ -344,3 +344,13 @@ a:active {
 	padding-right: 0;
 	padding-left: 0;
 }
+
+.card {
+	padding-top: 100px;
+	margin-top: 50px;
+}
+
+.graph-container {
+	padding-top: 50px;
+	margin-top: 50px;
+}

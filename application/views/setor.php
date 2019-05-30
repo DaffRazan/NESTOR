@@ -1,46 +1,45 @@
 <!-- Header -->
-<header class="masthead bg-primary text-white text-center">
+<header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg.jpg')">
     <div class=" container">
-
-        <div class="card text-white bg-secondary mb-5">
-            <div class="card-header text-center">
-                <h5>Input Setoran Data Ikan</h5>
-                <p class="card-text text-success"><?= "Profil User: " . $users['username']; ?></p>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title text-center text-warning">Perhatian: Mohon isi data setoran dengan teliti dan bijak</h4>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center mt-4">
-            <form action="<?= base_url('setor/input_setoran'); ?>" method="post">
-                <div class="form-row">
-                    <?= $this->session->flashdata('pesan'); ?>
-                    <div class="col-md-12 mb-5">
-                        <button class="btn btn-secondary float-left mr-2" id="tambah">+</button>
-                        <button class="btn btn-danger float-left" id="kurang">-</button>
-                    </div><br>
-                    <!--row added with js -->
+        <?php if (empty($data_profil)) :  ?>
+            <div class="card text-white bg-secondary mb-5">
+                <div class="card-header text-center">
+                    <h3>ATTENTION</h3>
+                    <p class="card-text text-success"><?= "Profil User: " . $users['username']; ?></p>
                 </div>
-                <div id="fieldSetor">
-                    <!-- <div class="form-row">
-                        <div class="col">
-                            <label for="">Jenis (ex:tuna)</label>
-                            <input name="jenis[]" type="text" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="">Berat (kg)</label>
-                            <input name="berat[]" type="number" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="">Harga (Rp)</label>
-                            <input name="harga[]" type="number" class="form-control" required>
-                        </div>
-                    </div> -->
+                <div class="card-body">
+                    <h4 class="card-title text-center text-warning">Anda harus mengisi data profil kapal dahulu sebelum menyetor</h4>
                 </div>
-                <button class="btn btn-dark btn-block" type="submit" name="submit">Submit</button>
-            </form>
-        </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($data_profil)) :  ?>
+            <div class="card text-white bg-secondary mb-5">
+                <div class="card-header text-center">
+                    <h3>Input Setoran Data Ikan</h3>
+                    <p class="card-text text-success"><?= "Profil User: " . $users['username']; ?></p>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title text-center text-warning">Perhatian: Mohon isi data setoran dengan teliti dan bijak</h4>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <form action="<?= base_url('setor/input_setoran'); ?>" method="post">
+                    <div class="form-row">
+                        <div class="col-md-12 mb-5">
+                            <button class="btn btn-secondary float-left mr-2" id="tambah">+</button>
+                            <button class="btn btn-danger float-left" id="kurang">-</button>
+                        </div><br>
+                        <!--row added with js -->
+                    </div>
+                    <div id="fieldSetor">
+
+                    </div>
+                    <button class="btn btn-dark btn-block" type="submit" name="submit">Submit</button>
+                </form>
+            </div>
+        <?php endif; ?>
     </div>
 </header>
 
@@ -50,7 +49,7 @@
             <h3>Hubungi Kami</h3>
             <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
             <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
-            <p>&copy;2019 Nestor All Rights Reserved</p>
+            <p>&copy;Nestor <?= date('Y'); ?> All Rights Reserved</p>
         </div>
     </div>
 
@@ -126,31 +125,50 @@
 
         const tambah = document.querySelector('#tambah')
         console.log(tambah)
-        let i = 0
         const fieldSetor = document.querySelector('#fieldSetor')
+        const kurang = document.querySelector('#kurang')
+        fieldSetor.appendChild(field())
+        let i = 1
+
         tambah.addEventListener('click', function(e) {
+
             event.preventDefault()
             fieldSetor.innerHTML = ''
 
             i++
-
+            if (i === 1) {
+                kurang.setAttribute('hidden', true)
+            } else {
+                kurang.removeAttribute('hidden')
+            }
             for (let index = 1; index <= i; index++) {
                 fieldSetor.appendChild(field())
             }
         })
 
-        const kurang = document.querySelector('#kurang')
+
         kurang.addEventListener('click', function(e) {
+
             event.preventDefault()
             fieldSetor.innerHTML = ''
 
             i--
-
+            if (i === 1) {
+                kurang.setAttribute('hidden', true)
+            } else {
+                kurang.removeAttribute('hidden')
+            }
             for (let index = 1; index <= i; index++) {
                 fieldSetor.appendChild(field())
             }
         })
+        if (i === 1) {
+            kurang.setAttribute('hidden', true)
+        } else {
+            kurang.removeAttribute('hidden')
+        }
     </script>
+
     <!-- Bootstrap core JavaScript -->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

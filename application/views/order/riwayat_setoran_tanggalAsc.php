@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg2.jpg')">
+<header class="masthead bg-primary text-white text-center">
     <div class="container">
         <div class="card text-white bg-secondary mb-5">
             <div class="card-header text-center">
@@ -20,7 +20,7 @@
 
                     <div class="col-lg-6">
                         <div class="dropdown float-right mb-4">
-                            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Urutkan berdasarkan
+                            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Tanggal (lama-baru)
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu text-center">
                                 <li class="mb-2"><a href="<?= base_url('setor/riwayat_setoran_orderByHargaTermurah'); ?>">Harga termurah</a></li>
