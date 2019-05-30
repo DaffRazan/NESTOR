@@ -1,4 +1,48 @@
 <!-- Header -->
+<<<<<<< HEAD
+<header class="masthead bg-primary text-white text-center">
+    <div class=" container">
+
+        <div class="card text-white bg-secondary mb-5">
+            <div class="card-header text-center">
+                <h5>Input Setoran Data Ikan</h5>
+                <p class="card-text text-success"><?= "Profil User: " . $users['username']; ?></p>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title text-center text-warning">Perhatian: Mohon isi data setoran dengan teliti dan bijak</h4>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            <form action="<?= base_url('setor/input_setoran'); ?>" method="post">
+                <div class="form-row">
+                    <?= $this->session->flashdata('pesan'); ?>
+                    <div class="col-md-12 mb-5">
+                        <button class="btn btn-secondary float-left mr-2" id="tambah">+</button>
+                        <button class="btn btn-danger float-left" id="kurang">-</button>
+                    </div><br>
+                    <!--row added with js -->
+                </div>
+                <div id="fieldSetor">
+                    <!-- <div class="form-row">
+                        <div class="col">
+                            <label for="">Jenis (ex:tuna)</label>
+                            <input name="jenis[]" type="text" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="">Berat (kg)</label>
+                            <input name="berat[]" type="number" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="">Harga (Rp)</label>
+                            <input name="harga[]" type="number" class="form-control" required>
+                        </div>
+                    </div> -->
+                </div>
+                <button class="btn btn-dark btn-block" type="submit" name="submit">Submit</button>
+            </form>
+        </div>
+=======
 <header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg.jpg')">
     <div class=" container">
         <?php if (empty($data_profil)) :  ?>
@@ -40,6 +84,7 @@
                 </form>
             </div>
         <?php endif; ?>
+>>>>>>> YaumilBranch
     </div>
 </header>
 
@@ -49,7 +94,11 @@
             <h3>Hubungi Kami</h3>
             <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
             <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
+<<<<<<< HEAD
+            <p>&copy;2019 Nestor All Rights Reserved</p>
+=======
             <p>&copy;Nestor <?= date('Y'); ?> All Rights Reserved</p>
+>>>>>>> YaumilBranch
         </div>
     </div>
 
@@ -125,6 +174,11 @@
 
         const tambah = document.querySelector('#tambah')
         console.log(tambah)
+<<<<<<< HEAD
+        let i = 0
+        const fieldSetor = document.querySelector('#fieldSetor')
+        tambah.addEventListener('click', function(e) {
+=======
         const fieldSetor = document.querySelector('#fieldSetor')
         const kurang = document.querySelector('#kurang')
         fieldSetor.appendChild(field())
@@ -132,36 +186,53 @@
 
         tambah.addEventListener('click', function(e) {
 
+>>>>>>> YaumilBranch
             event.preventDefault()
             fieldSetor.innerHTML = ''
 
             i++
+<<<<<<< HEAD
+
+=======
             if (i === 1) {
                 kurang.setAttribute('hidden', true)
             } else {
                 kurang.removeAttribute('hidden')
             }
+>>>>>>> YaumilBranch
             for (let index = 1; index <= i; index++) {
                 fieldSetor.appendChild(field())
             }
         })
 
+<<<<<<< HEAD
+        const kurang = document.querySelector('#kurang')
+        kurang.addEventListener('click', function(e) {
+=======
 
         kurang.addEventListener('click', function(e) {
 
+>>>>>>> YaumilBranch
             event.preventDefault()
             fieldSetor.innerHTML = ''
 
             i--
+<<<<<<< HEAD
+
+=======
             if (i === 1) {
                 kurang.setAttribute('hidden', true)
             } else {
                 kurang.removeAttribute('hidden')
             }
+>>>>>>> YaumilBranch
             for (let index = 1; index <= i; index++) {
                 fieldSetor.appendChild(field())
             }
         })
+<<<<<<< HEAD
+    </script>
+=======
         if (i === 1) {
             kurang.setAttribute('hidden', true)
         } else {
@@ -169,6 +240,7 @@
         }
     </script>
 
+>>>>>>> YaumilBranch
     <!-- Bootstrap core JavaScript -->
     <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

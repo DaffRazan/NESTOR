@@ -1,14 +1,37 @@
 <!-- Header -->
+<<<<<<< HEAD
+<header class="masthead bg-primary text-white text-center">
+    <div class="container">
+        <div class="card text-white bg-secondary mb-5">
+            <div class="card-header text-center">
+                <h5>Riwayat Setoran Data Ikan</h5>
+=======
 <header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg2.jpg')">
     <div class="container">
         <div class="card text-white bg-secondary mb-5">
             <div class="card-header text-center">
                 <h3>Riwayat Setoran Data Ikan</h3>
+>>>>>>> YaumilBranch
                 <p class="card-text text-success"><?= "Profil User: " . $users['username']; ?></p>
             </div>
             <div class="card-body">
                 <h4 class="card-title text-center text-primary">Form Data Setoran User</h4>
 
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <!-- Search form -->
+                        <form class="form-inline active-cyan-4">
+                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Cari ikan..." aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </form>
+                    </div>
+=======
+
+=======
+>>>>>>> YaumilBranch
                 <div class="row mt-5">
                     <div class="col-lg-6">
                         <!-- Search form -->
@@ -18,26 +41,52 @@
                         </form>
                     </div>
 
+<<<<<<< HEAD
+>>>>>>> DaffaBranch
+=======
+>>>>>>> YaumilBranch
                     <div class="col-lg-6">
                         <div class="dropdown float-right mb-4">
                             <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Urutkan berdasarkan
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu text-center">
+<<<<<<< HEAD
+                                <li class="mb-2"><a href="#">Harga termurah</a></li>
+                                <li class="mb-2"><a href="#">Harga termahal</a></li>
+                                <li class="mb-2"><a href="#">Tanggal Setor (lama-baru)</a></li>
+                                <li class="mb-2"><a href="#">Tanggal Setor (baru-lama)</a></li>
+=======
                                 <li class="mb-2"><a href="<?= base_url('setor/riwayat_setoran_orderByHargaTermurah'); ?>">Harga termurah</a></li>
                                 <li class="mb-2"><a href="<?= base_url('setor/riwayat_setoran_orderByHargaTermahal'); ?>">Harga termahal</a></li>
                                 <li class="mb-2"><a href="<?= base_url('setor/riwayat_setoran_orderByTanggalAsc'); ?>">Tanggal Setor (lama-baru)</a></li>
                                 <li class="mb-2"><a href="<?= base_url('setor/riwayat_setoran_orderByTanggalDesc'); ?>">Tanggal Setor (baru-lama)</a></li>
+>>>>>>> YaumilBranch
                             </ul>
                         </div>
                     </div>
                 </div>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Jenis</th>
+                            <th scope="col">Berat</th>
+                            <th scope="col">Harga</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Waktu</th>
+                            <th scope="col">Ubah</th>
+=======
+=======
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 text-center">
                         <?= $this->session->flashdata('pesan'); ?>
                     </div>
                 </div>
 
+>>>>>>> YaumilBranch
                 <?php if (empty($setor)) : ?>
                     <div class="alert alert-danger" role="alert">
                         Data Ikan tidak ditemukan.
@@ -56,6 +105,10 @@
                         </div>
                     </div>
                 <?php endif; ?>
+<<<<<<< HEAD
+>>>>>>> DaffaBranch
+=======
+>>>>>>> YaumilBranch
 
                 <?php if (!empty($setor)) : ?>
                     <table class="table text-white">
@@ -107,7 +160,11 @@
         <h3>Hubungi Kami</h3>
         <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
         <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
+<<<<<<< HEAD
+        <p>&copy;2019 Nestor All Rights Reserved</p>
+=======
         <p>&copy;Nestor <?= date('Y'); ?> All Rights Reserved</p>
+>>>>>>> YaumilBranch
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

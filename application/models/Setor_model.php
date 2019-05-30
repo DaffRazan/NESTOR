@@ -8,6 +8,8 @@ class Setor_model extends CI_Model
         return $this->db->get('setor')->result_array();
     }
 
+<<<<<<< HEAD
+=======
     // Beginning of Order By
     public function OrderByHargaAsc()
     {
@@ -38,6 +40,7 @@ class Setor_model extends CI_Model
     }
     //end of order by
 
+>>>>>>> YaumilBranch
     public function cariDataSetoran()
     {
         $keyword = $this->input->post('keyword', true);

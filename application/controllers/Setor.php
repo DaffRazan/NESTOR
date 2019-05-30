@@ -16,13 +16,19 @@ class Setor extends CI_Controller
         $data['title'] = 'Nestor - Input Setoran';
         $data['users'] = $this->db->get_where('users', ['username' =>
         $this->session->userdata('username')])->row_array();
+<<<<<<< HEAD
+=======
         $data['data_profil'] = $this->db->get_where('data_profil', ['id_user' =>
         $this->session->userdata('id')])->row_array();
+>>>>>>> YaumilBranch
 
         $this->load->view('navbar_user', $data);
         $this->load->view('setor');
     }
 
+<<<<<<< HEAD
+
+=======
     public function displayGrafikHarga()
     {
         $data['title'] = 'Nestor - Grafik Setoran Harga Ikan';
@@ -44,6 +50,7 @@ class Setor extends CI_Controller
         $this->load->view('navbar_user', $data);
         $this->load->view('tampil_grafik_berat', $data);
     }
+>>>>>>> YaumilBranch
 
     public function input_setoran()
     {
@@ -70,7 +77,11 @@ class Setor extends CI_Controller
             Data setoran berhasil ditambahkan!
             </div>');
         }
+<<<<<<< HEAD
+        redirect('setor');
+=======
         redirect('setor/riwayat_setoran');
+>>>>>>> YaumilBranch
     }
 
     public function riwayat_setoran()
@@ -94,6 +105,8 @@ class Setor extends CI_Controller
         $this->load->view('riwayat_setoran', $data);
     }
 
+<<<<<<< HEAD
+=======
     public function riwayat_setoran_orderByHargaTermurah()
     {
         $data['title'] = 'Nestor - Riwayat Setoran';
@@ -178,6 +191,7 @@ class Setor extends CI_Controller
         $this->load->view('order/riwayat_setoran_tanggalDesc', $data);
     }
 
+>>>>>>> YaumilBranch
     public function hapusSetoran($id_setor)
     {
         $this->Setor_model->hapusDataSetoran($id_setor);

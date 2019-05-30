@@ -6,7 +6,11 @@
         <title> <?= $title ?> </title>
         <div class="card bg-secondary mb-3 text-center">
             <div class="card-header text-center">
+<<<<<<< HEAD
+                <h5>Identitas User</h5>
+=======
                 <h3>Identitas User</h3>
+>>>>>>> YaumilBranch
             </div>
 
             <div class="card-body">
@@ -50,7 +54,11 @@
             <h3>Hubungi Kami</h3>
             <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
             <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
+<<<<<<< HEAD
+            <p>&copy;2019 Nestor All Rights Reserved</p>
+=======
             <p>&copy;Nestor <?= date('Y'); ?> All Rights Reserved</p>
+>>>>>>> YaumilBranch
         </div>
     </div>
 
