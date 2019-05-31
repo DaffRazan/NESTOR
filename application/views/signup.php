@@ -10,6 +10,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Main Style Css -->
@@ -19,7 +21,7 @@
 </head>
 
 <body class="form-v5">
-    <div class="page-content">
+    <div class="page-content" style="background-image: url('../assets/img/carousel/nelayan-bg.jpg') !important;">
         <div class="form-v5-content">
             <a href="<?= base_url('home'); ?>"><i class="fas fa-2x fa-arrow-left ml-2"></i></a>
             <form class="form-detail mt-3" action="<?php echo base_url('nelayan/signup'); ?>" method="post">

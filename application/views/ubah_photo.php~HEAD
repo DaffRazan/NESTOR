@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<header class="masthead bg-primary text-white" style="background-image: url('../assets/img/carousel/nelayan-bg.jpg')">
+<header class="masthead bg-primary text-white">
     <div class="container">
         <title> <?= $title ?> </title>
         <div class="card bg-secondary mb-3 text-center">
@@ -9,7 +9,7 @@
                 <h5 style="color: yellow;">Username: <?= $users['username']; ?></h5>
             </div>
             <div class="card-body">
-                <h4 class="card-title text-center text-primary pb-5">Ubah Password</h4>
+                <h4 class="card-title text-center text-primary pb-5">Ubah Photo User</h4>
 
                 <div class="row">
                 </div>
@@ -17,24 +17,21 @@
                     <div class="row no-gutters">
                         <div class="col-md-12">
                             <?= $this->session->flashdata('message'); ?>
-                            <form action="<?= base_url('user/ubahpassword'); ?>" method="post">
-                                <div class="form-group">
-                                    <label for="current_password">Password Sekarang</label>
-                                    <input type="password" class="form-control" id="current_password" name="current_password">
-                                    <?= form_error('current_password', '<small class="text-danger pl-3">', '</small>'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="newpassword1">Password Baru</label>
-                                    <input type="password" class="form-control" id="newpassword1" name="newpassword1">
-                                    <?= form_error('newpassword1', '<small class="text-danger pl-3">', '</small>'); ?>
 
+                            <?= form_open_multipart('user/ubahphoto'); ?>
+                            <div class="form-group">
+                                <div class="">
+                                    <label class="mr-2" for="username">Username</label>
+                                    <input type="text" class="" id="username" name="username" value="<?= $users['username']; ?>" readOnly>
                                 </div>
-                                <div class="form-group">
-                                    <label for="newpassword2">Konfirmasi Password Baru</label>
-                                    <input type="password" class="form-control" id="newpassword2" name="newpassword2">
-                                    <?= form_error('newpassword2', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="image" name="image">
+                                    <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary float-right">Ubah</button>
+                            </div>
+                            <button type="submit" class="btn btn-primary float-right">Ubah</button>
                             </form>
                         </div>
                     </div>
@@ -61,6 +58,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        //script popup name file gambar saat mau upload file bootstrap
+        $('.custom-file-input').on('change', function() {
+            let fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass("selected").html(fileName);
+        });
+    </script>
 </body>
 
 

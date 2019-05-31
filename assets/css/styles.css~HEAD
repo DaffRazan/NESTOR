@@ -1,5 +1,9 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato';
 }
 
 h1,
@@ -176,6 +180,7 @@ section h2 {
 }
 
 header.masthead {
+	padding-top: calc(6rem + 72px);
 	padding-bottom: 6rem;
 }
 
@@ -191,6 +196,7 @@ header.masthead h2 {
 
 @media (min-width: 992px) {
 	header.masthead {
+		padding-top: calc(6rem + 106px);
 		padding-bottom: 6rem;
 	}
 
@@ -318,9 +324,7 @@ a:active {
 }
 
 .profile-pic {
-	width: 250px;
 	height: 200px;
-	border-radius: 50%;
 }
 
 .about-section {
@@ -331,26 +335,7 @@ a:active {
 }
 
 .carousel {
-	width: 100%;
-}
-
-.carousel-caption {
-	top: 50%;
-	transform: translateY(-50%);
-	bottom: initial;
-}
-
-.container-fluid {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-.card {
-	padding-top: 100px;
-	margin-top: 50px;
-}
-
-.graph-container {
-	padding-top: 50px;
-	margin-top: 50px;
+	width: 50%;
+	height: auto;
+	padding: 0;
 }

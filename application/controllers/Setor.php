@@ -9,6 +9,7 @@ class Setor extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Setor_model');
+        $this->load->library('pagination');
     }
 
     public function index()
@@ -20,7 +21,7 @@ class Setor extends CI_Controller
         $this->session->userdata('id')])->row_array();
 
         $this->load->view('navbar_user', $data);
-        $this->load->view('setor');
+        $this->load->view('setor', $data);
     }
 
     public function displayGrafikHarga()
@@ -28,7 +29,7 @@ class Setor extends CI_Controller
         $data['title'] = 'Nestor - Grafik Setoran Harga Ikan';
 
         $data['setor'] = $this->db->get_where('setor', ['id_user' => $this->session->userdata('id')])->result_array();
-        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->result_array();
+        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->row_array();
 
         $this->load->view('navbar_user', $data);
         $this->load->view('tampil_grafik_harga', $data);
@@ -39,7 +40,7 @@ class Setor extends CI_Controller
         $data['title'] = 'Nestor - Grafik Setoran Berat Ikan';
 
         $data['setor'] = $this->db->get_where('setor', ['id_user' => $this->session->userdata('id')])->result_array();
-        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->result_array();
+        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->row_array();
 
         $this->load->view('navbar_user', $data);
         $this->load->view('tampil_grafik_berat', $data);
