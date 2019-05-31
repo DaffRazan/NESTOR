@@ -66,8 +66,8 @@
                                 <th scope="col">Jenis</th>
                                 <th scope="col">Berat</th>
                                 <th scope="col">Harga</th>
-                                <th scope="col">Tanggal (YYYY-MM-DD)</th>
-                                <th scope="col">Waktu (WIB Zone)</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Waktu (WIB)</th>
                                 <th scope="col">Akses Data <button type="button" class="btn btn-sm btn-info ml-2" data-trigger="focus" data-toggle="popover" title="Penghapusan data" data-content="Saat Anda salah memasukkan isian setoran (typo), Anda dapat menghapus data tersebut. Penghapusan data hanya dapat dilakukan dalam 1x24 jam waktu setor."><i class="fas fa-info"></i></button></th>
 
                             </tr>
@@ -81,12 +81,17 @@
                             <tr>
                                 <th><?= $i++; ?></th>
                                 <td><?= ucfirst($item['jenis']); ?></td>
-                                <td><?= $item['berat'] . " kg"; ?></td>
-                                <td><?= "Rp. " . $item['harga']; ?></td>
-                                <td><?= $item['tanggal']; ?></td>
+                                <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
+                                <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
+                                <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
-                                    <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
+                                    <?php if ($item['tanggal'] > date('Y-m-d')) : ?>
+                                        <form>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="">
+                                            </label>
+                                        </form>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
                                     <?php endif; ?>
                                 </td>

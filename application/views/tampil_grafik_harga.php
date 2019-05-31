@@ -103,7 +103,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Harga Setoran Ikan <?= $users['username']; ?>',
+                    text: 'Grafik Harga Setoran Ikan <?= $users['fullname']; ?>',
                     fontSize: 30
                 },
                 scales: {

@@ -28,6 +28,11 @@
                 <!-- Display validation errors here -->
                 <h2>Daftar Akun</h2>
                 <div class="form-row">
+                    <label for="full-name">Nama Lengkap</label>
+                    <input type="text" name="fullname" id="fullname" class="input-text" value="<?= set_value('fullname'); ?>"><i class="fas fa-user"></i>
+                    <small class="text-danger"><?= form_error('fullname'); ?></small>
+                </div>
+                <div class="form-row">
                     <label for="full-name">Username</label>
                     <input type="text" name="username" id="username" class="input-text" value="<?= set_value('username'); ?>"><i class="fas fa-user"></i>
                     <small class="text-danger"><?= form_error('username'); ?></small>
