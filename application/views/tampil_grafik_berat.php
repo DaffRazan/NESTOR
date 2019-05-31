@@ -101,7 +101,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Berat Ikan di Pasar',
+                    text: 'Grafik Berat Setoran Ikan <?= $users['username']; ?>',
                     fontSize: 30
                 },
                 scales: {
