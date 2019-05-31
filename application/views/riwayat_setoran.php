@@ -1,5 +1,9 @@
 <!-- Header -->
+<<<<<<< HEAD
+<header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg2.jpg')">
+=======
 <header class="masthead bg-primary text-white text-center" style="background-image: url('../assets/img/carousel/nelayan-bg.jpg')">
+>>>>>>> DaffaBranch
     <div class="container">
         <div class="card text-white bg-secondary mb-5">
             <div class="card-header text-center">
@@ -67,7 +71,11 @@
                                 <th scope="col">Harga</th>
                                 <th scope="col">Tanggal (YYYY-MM-DD)</th>
                                 <th scope="col">Waktu (WIB Zone)</th>
+<<<<<<< HEAD
+                                <th scope="col">Akses Data</th>
+=======
                                 <th scope="col">Akses Data <button type="button" class="btn btn-sm btn-info ml-2" data-trigger="focus" data-toggle="popover" title="Penghapusan data" data-content="Saat Anda salah memasukkan isian setoran (typo), Anda dapat menghapus data tersebut. Penghapusan data hanya dapat dilakukan dalam 1x24 jam waktu setor."><i class="fas fa-info"></i></button></th>
+>>>>>>> DaffaBranch
 
                             </tr>
                         </thead>
@@ -85,9 +93,13 @@
                                 <td><?= $item['tanggal']; ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
+<<<<<<< HEAD
+                                    <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
+=======
                                     <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
                                     <?php endif; ?>
+>>>>>>> DaffaBranch
                                 </td>
 
                             </tr>
@@ -96,6 +108,13 @@
                     ?>
                     </tbody>
                 </table>
+<<<<<<< HEAD
+            </div>
+        </div>
+
+
+
+=======
 
                 <!-- <nav aria-label="Page navigation example">
                     <ul id="demo" class="pagination float-right">
@@ -118,6 +137,7 @@
                 </nav> -->
             </div>
         </div>
+>>>>>>> DaffaBranch
     </div>
 </header>
 
@@ -132,6 +152,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
 
     <script>
         $(function() {
@@ -146,4 +168,5 @@
     </script>
 
 
+>>>>>>> DaffaBranch
 </body>
