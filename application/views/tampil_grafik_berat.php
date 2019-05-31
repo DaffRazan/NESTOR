@@ -101,7 +101,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Berat Ikan Hasil Setoran',
+                    text: 'Grafik Berat Ikan Hasil Setoran <?= $users['username']; ?>',
                     fontSize: 30
                 },
                 scales: {
