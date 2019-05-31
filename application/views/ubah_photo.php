@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<header class="masthead bg-primary text-white">
+<header class="masthead bg-primary text-white" style="background-image: url('../assets/img/carousel/nelayan-bg.jpg')">
     <div class="container">
         <title> <?= $title ?> </title>
         <div class="card bg-secondary mb-3 text-center">

@@ -9,10 +9,7 @@ class Setor extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Setor_model');
-<<<<<<< HEAD
-=======
         $this->load->library('pagination');
->>>>>>> DaffaBranch
     }
 
     public function index()
@@ -24,11 +21,7 @@ class Setor extends CI_Controller
         $this->session->userdata('id')])->row_array();
 
         $this->load->view('navbar_user', $data);
-<<<<<<< HEAD
-        $this->load->view('setor');
-=======
         $this->load->view('setor', $data);
->>>>>>> DaffaBranch
     }
 
     public function displayGrafikHarga()
@@ -36,11 +29,7 @@ class Setor extends CI_Controller
         $data['title'] = 'Nestor - Grafik Setoran Harga Ikan';
 
         $data['setor'] = $this->db->get_where('setor', ['id_user' => $this->session->userdata('id')])->result_array();
-<<<<<<< HEAD
-        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->result_array();
-=======
         $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->row_array();
->>>>>>> DaffaBranch
 
         $this->load->view('navbar_user', $data);
         $this->load->view('tampil_grafik_harga', $data);
@@ -51,11 +40,7 @@ class Setor extends CI_Controller
         $data['title'] = 'Nestor - Grafik Setoran Berat Ikan';
 
         $data['setor'] = $this->db->get_where('setor', ['id_user' => $this->session->userdata('id')])->result_array();
-<<<<<<< HEAD
-        $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->result_array();
-=======
         $data['users'] = $this->db->get_where('users', ['id' => $this->session->userdata('id')])->row_array();
->>>>>>> DaffaBranch
 
         $this->load->view('navbar_user', $data);
         $this->load->view('tampil_grafik_berat', $data);
@@ -199,5 +184,18 @@ class Setor extends CI_Controller
         $this->Setor_model->hapusDataSetoran($id_setor);
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('setor/riwayat_setoran');
+    }
+
+    public function cetak()
+    {
+        $data['title'] = 'Nestor - Cetak Setoran';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->getAllSetoran();
+        }
+
+        $this->load->view('cetak', $data);
     }
 }
