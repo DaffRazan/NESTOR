@@ -1,11 +1,7 @@
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center" style="background-image: url('assets/img/carousel/nelayan-bg.jpg')">
     <div class="container">
-<<<<<<< HEAD
-        <h1 class="mb-0 pt-5" style="color:yellow;">NeStor</h1><br>
-=======
         <h1 class="pt-1" style="color:yellow;">NeStor</h1><br>
->>>>>>> DaffaBranch
         <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
         <div class="container bg-primary" style="width:50%;">
