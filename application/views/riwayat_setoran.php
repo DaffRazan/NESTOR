@@ -60,6 +60,7 @@
                 <?php if (!empty($setor)) : ?>
                     <table class="table text-white">
                         <thead>
+                            <tr> <a href="<?= base_url('setor/cetak'); ?>"><button type="button" class="btn btn-light mb-4 float-right">Cetak</button></a></tr>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Jenis</th>
