@@ -56,6 +56,7 @@ class Nelayan extends CI_Controller
     public function signup()
     {
         //aturan untuk tiap-tiap kolom daftar
+        $this->form_validation->set_rules('fullname', 'Nama Lengkap', 'required|trim');
         $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[users.username]');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules(
@@ -73,6 +74,7 @@ class Nelayan extends CI_Controller
             $this->load->view('signup');
         } else {
             $data = [
+                'fullname' => htmlspecialchars($this->input->post('fullname', true)),
                 'username' => htmlspecialchars($this->input->post('username', true)),
                 'image' => 'default.jpg',
                 'email' => htmlspecialchars($this->input->post('email', true)),
