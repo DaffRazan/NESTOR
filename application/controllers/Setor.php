@@ -185,4 +185,17 @@ class Setor extends CI_Controller
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('setor/riwayat_setoran');
     }
+
+    public function cetak()
+    {
+        $data['title'] = 'Nestor - Cetak Setoran';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->getAllSetoran();
+        }
+
+        $this->load->view('cetak', $data);
+    }
 }
