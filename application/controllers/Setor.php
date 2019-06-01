@@ -199,4 +199,43 @@ class Setor extends CI_Controller
 
         $this->load->view('cetak', $data);
     }
+
+    public function cetakTanggalDesc()
+    {
+        $data['title'] = 'Nestor - Cetak Setoran';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->OrderByTanggalDesc();
+        }
+
+        $this->load->view('cetak_tanggalDesc', $data);
+    }
+
+    public function cetakHargaTermurah()
+    {
+        $data['title'] = 'Nestor - Cetak Setoran';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->orderByHargaAsc();
+        }
+
+        $this->load->view('cetak_hargaTermurah', $data);
+    }
+
+    public function cetakHargaTermahal()
+    {
+        $data['title'] = 'Nestor - Cetak Setoran';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        if ($this->db->where('id_user', $this->session->userdata('id'))) {
+            $data['setor'] = $this->Setor_model->orderByHargaDesc();
+        }
+
+        $this->load->view('cetak_hargaTermahal', $data);
+    }
 }
