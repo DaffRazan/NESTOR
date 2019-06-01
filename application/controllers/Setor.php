@@ -10,6 +10,7 @@ class Setor extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('Setor_model');
         $this->load->library('pagination');
+        $this->load->helper('date');
     }
 
     public function index()

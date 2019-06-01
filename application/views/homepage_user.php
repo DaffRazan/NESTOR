@@ -5,7 +5,7 @@
         <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
         <div class="container bg-primary" style="width:50%;">
-            <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['username']; ?></h2>
+            <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['fullname']; ?></h2>
         </div>
         <?= $this->session->flashdata('pesan'); ?>
     </div>

@@ -15,16 +15,6 @@
     <title>Cetak</title>
 </head>
 
-<body>
-
-</body>
-
-</html>
-
-
-
-
-
 <!-- Header -->
 <style>
     @media print {
@@ -33,7 +23,6 @@
         }
     }
 </style>
-
 
 <body>
 
@@ -56,8 +45,8 @@
                                 <th scope="col">Jenis</th>
                                 <th scope="col">Berat</th>
                                 <th scope="col">Harga</th>
-                                <th scope="col">Tanggal (YYYY-MM-DD)</th>
-                                <th scope="col">Waktu (WIB Zone)</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Waktu (WIB)</th>
 
                             </tr>
                         </thead>
@@ -70,9 +59,9 @@
                             <tr>
                                 <th><?= $i++; ?></th>
                                 <td><?= ucfirst($item['jenis']); ?></td>
-                                <td><?= $item['berat'] . " kg"; ?></td>
-                                <td><?= "Rp. " . $item['harga']; ?></td>
-                                <td><?= $item['tanggal']; ?></td>
+                                <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
+                                <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
+                                <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
                                 <td><?= $item['waktu']; ?></td>
 
 
@@ -93,3 +82,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
+</html>

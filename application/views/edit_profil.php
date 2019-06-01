@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label> Umur Kapal :</label>
-                                <input id="umur_kpl" class="form-control" style="width:30%;" type="text" name="umur_kpl" value="<?= $data_profil['umur_kpl']; ?>">
+                                <input id="tahun_kpl" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= $data_profil['tahun_kapal']; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Asal Negara :</label>
