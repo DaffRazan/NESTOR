@@ -24,6 +24,8 @@ class User extends CI_Controller
             if ($this->db->where('id_user', $this->session->userdata('id'))) {
                 $data['setor'] = $this->Setor_model->getMaxHarga();
                 $data['setor2'] = $this->Setor_model->getMinHarga();
+                $data['setor3'] = $this->Setor_model->getTotalHarga();
+                $data['setor4'] = $this->Setor_model->getTotalBerat();
             }
 
             $this->load->view('navbar_user', $data);
