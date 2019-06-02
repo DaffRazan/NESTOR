@@ -73,6 +73,7 @@
                             </tr>
                         </thead>
                     <?php endif; ?>
+
                     <tbody>
                         <?php
                         $i = 1;
@@ -83,13 +84,13 @@
                                 <td><?= ucfirst($item['jenis']); ?></td>
                                 <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
                                 <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
-                                <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
+                                <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
                                     <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
                                         <form>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" name="check">
                                             </label>
                                         </form>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
@@ -103,25 +104,6 @@
                     </tbody>
                 </table>
 
-                <!-- <nav aria-label="Page navigation example">
-                    <ul id="demo" class="pagination float-right">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav> -->
             </div>
         </div>
     </div>
