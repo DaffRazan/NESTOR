@@ -35,12 +35,6 @@
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/mainProfil'); ?>"><i class="fab fa-wpforms"></i> PROFIL</a>
                     </li>
-                    <!-- <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/profil'); ?>"><i class="fas fa-ship"></i> Profil Kapal</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('user/profilUser'); ?>"><i class="fas fa-user"></i> Profil User</a>
-                    </li> -->
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('setor/displayGrafikHarga'); ?>"><i class="fas fa-chart-bar"></i> Grafik</a>
                     </li>

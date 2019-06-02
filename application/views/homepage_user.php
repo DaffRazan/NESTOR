@@ -5,12 +5,14 @@
         <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
         <div class="container bg-primary" style="width:50%;">
-            <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['fullname']; ?></h2><br>
+            <h2 class="font-weight-light mb-0"> Selamat datang, <span class="text-dark"><?= $users['fullname']; ?></span></h2><br>
             <h4 class="text-warning">Track Record Penangkapan Ikan tahun
                 <?= date('Y'); ?>
             </h4> <br>
             <h4>Ikan paling mahal: <span class="text-warning"><?= ucfirst($setor['jenis']) . "  (" . number_format($setor['harga'], 0, ",", ".") . ")"; ?></span></h4>
             <h4>Ikan paling murah: <span class="text-warning"><?= ucfirst($setor2['jenis']) . " (" . number_format($setor2['harga'], 0, ",", ".") . ")"; ?></span></h4>
+            <h4>Total harga setor: <span class="text-warning"><?= "Rp. " . number_format($setor3['harga'], 0, ",", "."); ?></span></h4>
+            <h4>Total berat setor: <span class="text-warning"><?= number_format($setor4['berat'], 0, ",", ".") . " kg"; ?></span></h4>
         </div>
         <?= $this->session->flashdata('pesan'); ?>
     </div>

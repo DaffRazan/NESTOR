@@ -22,6 +22,18 @@ class Setor_model extends CI_Model
         return $this->db->get('setor')->row_array();
     }
 
+    public function getTotalHarga()
+    {
+        $this->db->select_sum('harga');
+        return $this->db->get('setor')->row_array();
+    }
+
+    public function getTotalBerat()
+    {
+        $this->db->select_sum('berat');
+        return $this->db->get('setor')->row_array();
+    }
+
     // Beginning of Order By
     public function OrderByHargaAsc()
     {
