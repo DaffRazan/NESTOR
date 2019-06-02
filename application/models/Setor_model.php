@@ -8,6 +8,20 @@ class Setor_model extends CI_Model
         return $this->db->get('setor')->result_array();
     }
 
+    public function getMaxHarga()
+    {
+        $this->db->select('*');
+        $this->db->where('harga = (select max(harga) from setor)', NULL, FALSE);
+        return $this->db->get('setor')->row_array();
+    }
+
+    public function getMinHarga()
+    {
+        $this->db->select('*');
+        $this->db->where('harga = (select min(harga) from setor)', NULL, FALSE);
+        return $this->db->get('setor')->row_array();
+    }
+
     // Beginning of Order By
     public function OrderByHargaAsc()
     {

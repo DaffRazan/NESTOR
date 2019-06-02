@@ -61,7 +61,7 @@
                     <table class="table text-white">
                         <thead>
                             <tr> <a href="<?= base_url('setor/cetak'); ?>"><button type="button" class="btn btn-light mb-4 float-right">Cetak</button></a></tr>
-                            <tr>
+                            <tr class="text-primary">
                                 <th scope="col">#</th>
                                 <th scope="col">Jenis</th>
                                 <th scope="col">Berat</th>
@@ -86,7 +86,7 @@
                                 <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
-                                    <?php if ($item['tanggal'] > date('Y-m-d')) : ?>
+                                    <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
                                         <form>
                                             <label class="checkbox-inline">
                                                 <input type="checkbox" value="">
