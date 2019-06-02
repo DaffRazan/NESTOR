@@ -31,7 +31,8 @@
         <div class="card">
             <div class="card-header text-center">
                 <h5>Riwayat Setoran Data Ikan</h5>
-                <p class="card-text "><?= "Profil User: " . $users['username']; ?></p>
+                <p class="card-text mb-0"><?= "Nama: " . $users['fullname']; ?></p>
+                <p class="card-text"><?= "ID User: " . $users['id']; ?></p>
             </div>
             <div class="">
 
@@ -61,7 +62,7 @@
                                 <td><?= ucfirst($item['jenis']); ?></td>
                                 <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
                                 <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
-                                <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
+                                <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
 
 

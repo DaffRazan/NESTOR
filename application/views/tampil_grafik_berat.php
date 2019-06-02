@@ -6,7 +6,7 @@
     <div class="container graph-container">
         <div class="card justify-content-center mx-auto" style="width: 50rem;">
             <div class="card-body">
-                <a href="<?= base_url('setor/displayGrafikHarga') ?>" class="btn btn-success mb-3 float-right">Liat grafik harga ikan</a>
+                <a href="<?= base_url('setor/displayGrafikHarga') ?>" class="btn btn-success mb-3 float-right">Lihat grafik harga ikan</a>
 
                 <canvas id="myChart" width="50%" height="50%"></canvas>
 
