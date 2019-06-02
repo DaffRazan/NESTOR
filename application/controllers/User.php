@@ -9,6 +9,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model('User_model');
         $this->load->library('form_validation');
+        $this->load->model('Setor_model');
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
     }
@@ -19,6 +20,11 @@ class User extends CI_Controller
             $data['title'] = 'Nestor - Homepage User';
             $data['users'] = $this->db->get_where('users', ['username' =>
             $this->session->userdata('username')])->row_array();
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor'] = $this->Setor_model->getMaxHarga();
+                $data['setor2'] = $this->Setor_model->getMinHarga();
+            }
 
             $this->load->view('navbar_user', $data);
             $this->load->view('homepage_user', $data);
