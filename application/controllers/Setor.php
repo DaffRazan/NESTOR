@@ -9,8 +9,8 @@ class Setor extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Setor_model');
-        $this->load->library('pagination');
         $this->load->helper('date');
+        $this->load->helper('tglindo');
     }
 
     public function index()

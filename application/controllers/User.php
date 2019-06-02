@@ -10,8 +10,8 @@ class User extends CI_Controller
         $this->load->model('User_model');
         $this->load->library('form_validation');
         $this->load->model('Setor_model');
-        $this->load->library('session');
         $this->load->helper(array('form', 'url'));
+        $this->load->helper('tglindo');
     }
 
     public function index()
@@ -97,6 +97,16 @@ class User extends CI_Controller
                 }
             }
         }
+    }
+
+    public function mainProfil()
+    {
+        $data['title'] = 'Nestor - Data Profil Kapal';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $this->load->view('navbar_user', $data);
+        $this->load->view('main_profil', $data);
     }
 
     public function profil()
