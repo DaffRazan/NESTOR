@@ -85,7 +85,7 @@
                                 <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
                                 <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
-                                <td>
+                                <label>
                                     <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
                                         <form>
                                             <label class="checkbox-inline">
@@ -94,7 +94,7 @@
                                         </form>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
                                     <?php endif; ?>
-                                </td>
+                                </label>
 
                             </tr>
                         <?php
