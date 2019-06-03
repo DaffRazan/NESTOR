@@ -35,6 +35,49 @@
     </div>
   </div>
 
+  <!-- Grafik section -->
+
+  <section class="masthead bg-primary text-white text-center">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <h2 class="text-center text-uppercase text-white">Grafik Setor 1 Minggu Terakhir</h2>
+    <hr class="star-light">
+
+    <div class="container graph-container">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <div class="card justify-content-center mx-auto" style="width: 30rem;">
+            <div class="card-body">
+              <a href="<?= base_url('home/grafikBerat'); ?>" class="btn btn-success mb-3 float-right">Lihat Detail</a>
+
+              <canvas id="myChartBerat" width="50%" height="50%"></canvas>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card justify-content-center mx-auto" style="width: 30rem;">
+            <div class="card-body">
+              <a href="<?= base_url('home/grafikHarga'); ?>" class="btn btn-success mb-3 float-right">Lihat Detail</a>
+
+              <canvas id="myChartHarga" width="50%" height="50%"></canvas>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+
+
+  <!-- end of grafik section-->
+
   <!-- About Section -->
   <section class="white-section bg-primary text-white mb-0" id="about">
     <div class="container-fluid"><br>
@@ -89,6 +132,153 @@
 
   <!-- Custom scripts for this template -->
   <script src="<?= base_url('assets/'); ?>js/freelancer.min.js"></script>
+
+  <script>
+    var ctx = document.getElementById('myChartBerat').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          <?php
+          for ($i = 0; $i < sizeof($setor); $i++) {
+            if ($i != sizeof($setor) - 1) {
+              echo "'" . $setor[$i]['jenis'] . "'" . ',';
+            } else {
+              echo "'" . $setor[$i]['jenis'] . "'";
+            }
+          }
+          ?>
+        ],
+        datasets: [{
+          legend: {
+            display: false
+          },
+          data: [<?php
+                  for ($i = 0; $i < sizeof($setor); $i++) {
+                    if ($i != sizeof($setor) - 1) {
+                      echo $setor[$i]['berat'] . ',';
+                    } else {
+                      echo $setor[$i]['berat'];
+                    }
+                  }
+                  ?>],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Grafik Berat Setoran Ikan',
+          fontSize: 30
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+
+  <script>
+    var ctx = document.getElementById('myChartHarga').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          <?php
+          for ($i = 0; $i < sizeof($setor); $i++) {
+            if ($i != sizeof($setor) - 1) {
+              echo "'" . $setor[$i]['jenis'] . "'" . ',';
+            } else {
+              echo "'" . $setor[$i]['jenis'] . "'";
+            }
+          }
+          ?>
+        ],
+        datasets: [{
+          legend: {
+            display: false
+          },
+          data: [<?php
+                  for ($i = 0; $i < sizeof($setor); $i++) {
+                    if ($i != sizeof($setor) - 1) {
+                      echo $setor[$i]['harga'] . ',';
+                    } else {
+                      echo $setor[$i]['harga'];
+                    }
+                  }
+                  ?>],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Grafik Harga Setoran Ikan ',
+          fontSize: 30
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+
 
 </body>
 
