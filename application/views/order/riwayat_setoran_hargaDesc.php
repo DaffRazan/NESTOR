@@ -81,14 +81,20 @@
                             <tr>
                                 <th><?= $i++; ?></th>
                                 <td><?= ucfirst($item['jenis']); ?></td>
-                                <td><?= $item['berat'] . " kg"; ?></td>
-                                <td><?= "Rp. " . $item['harga']; ?></td>
-                                <td><?= $item['tanggal']; ?></td>
+                                <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
+                                <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
+                                <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
                                     <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
+                                        <form>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="" name="check">
+                                            </label>
+                                        </form>
                                         <a href="<?= base_url('setor/hapusSetoran/'); ?><?= $item['id_setor']; ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin hapus?');">Hapus</a>
-                                    <?php endif; ?> </td>
+                                    <?php endif; ?>
+                                </td>
 
                             </tr>
                         <?php
