@@ -44,7 +44,7 @@
     <hr class="star-light">
 
     <div class="container graph-container">
-      <div class="row mb-5">
+      <div class="row">
         <div class="col-lg-6">
           <div class="card justify-content-center mx-auto" style="width: 30rem;">
             <div class="card-body">

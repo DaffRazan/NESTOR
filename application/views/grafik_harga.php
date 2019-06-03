@@ -4,9 +4,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
     <div class="container graph-container">
-        <div class="row">
-            <a href="<?= base_url('home/index'); ?>"><button type="button" class="btn btn-warning float-left mr-2 mb-2 text-white">Kembali</button></a>
-        </div>
         <div class="card justify-content-center mx-auto" style="width: 50rem;">
             <div class="card-body">
 
