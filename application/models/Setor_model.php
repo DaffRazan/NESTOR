@@ -78,4 +78,11 @@ class Setor_model extends CI_Model
         $this->db->where('id_setor', $id_setor);
         $this->db->delete('setor');
     }
+
+    public function grafikperMinggu()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 WEEK) ORDER BY tanggal ASC');
+        return $this->db->get('setor')->result_array();
+    }
 }
