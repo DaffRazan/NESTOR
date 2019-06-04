@@ -22,10 +22,11 @@ class User extends CI_Controller
             $this->session->userdata('username')])->row_array();
 
             if ($this->db->where('id_user', $this->session->userdata('id'))) {
-                $data['setor'] = $this->Setor_model->getMaxHarga();
+                $data['setor1'] = $this->Setor_model->getMaxHarga();
                 $data['setor2'] = $this->Setor_model->getMinHarga();
                 $data['setor3'] = $this->Setor_model->getTotalHarga();
                 $data['setor4'] = $this->Setor_model->getTotalBerat();
+                $data['setor'] = $this->Setor_model->grafikperMinggu();
             }
 
             $this->load->view('navbar_user', $data);
