@@ -64,8 +64,6 @@
                                 <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
                                 <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
-
-
                             </tr>
                         <?php
                     }
