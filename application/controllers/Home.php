@@ -31,7 +31,7 @@ class Home extends CI_Controller
         $data['title'] = 'Nestor - Grafik Setoran Harga Ikan';
 
         $data['setor'] = $this->Setor_model->grafikperMinggu();
-        $this->load->view('navbar_user', $data);
+        $this->load->view('navbar', $data);
         $this->load->view('grafik_harga', $data);
     }
 
@@ -41,7 +41,7 @@ class Home extends CI_Controller
 
         $data['setor'] = $this->Setor_model->grafikperMinggu();
 
-        $this->load->view('navbar_user', $data);
+        $this->load->view('navbar', $data);
         $this->load->view('grafik_berat', $data);
     }
 }

@@ -61,10 +61,8 @@
                                 <td><?= ucfirst($item['jenis']); ?></td>
                                 <td><?= number_format($item['berat'], 0, ",", ".")  . " kg"; ?></td>
                                 <td><?= "Rp. " . number_format($item['harga'], 0, ",", "."); ?></td>
-                                <td><?= date('d F Y', strtotime($item['tanggal'])); ?></td>
+                                <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
-
-
                             </tr>
                         <?php
                     }

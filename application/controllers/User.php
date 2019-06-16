@@ -21,12 +21,21 @@ class User extends CI_Controller
             $data['users'] = $this->db->get_where('users', ['username' =>
             $this->session->userdata('username')])->row_array();
 
+            //set userdata perdata setoran
             if ($this->db->where('id_user', $this->session->userdata('id'))) {
                 $data['setor1'] = $this->Setor_model->getMaxHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
                 $data['setor2'] = $this->Setor_model->getMinHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
                 $data['setor3'] = $this->Setor_model->getTotalHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
                 $data['setor4'] = $this->Setor_model->getTotalBerat();
-                $data['setor'] = $this->Setor_model->grafikperMinggu();
             }
 
             $this->load->view('navbar_user', $data);
@@ -215,18 +224,15 @@ class User extends CI_Controller
         $data['title'] = 'Nestor - Ubah Photo/Nama User';
         $data['users'] = $this->db->get_where('users', ['id' =>
         $this->session->userdata('id')])->row_array();
-        $id_user = $this->session->userdata('id');
 
-        $this->form_validation->set_rules('fullname', 'Nama', 'trim');
+        $this->form_validation->set_rules('fullname', 'Nama', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('navbar_user', $data);
             $this->load->view('ubah_photo', $data);
         } else {
-            $data = [
-                'fullname' => htmlspecialchars($this->input->post('fullname', true)),
-                "username" => $this->input->post('username')
-            ];
+            $id_user = $this->session->userdata('id');
+            $fullname =  $this->input->post('fullname', true);
 
             //cek jika ada gambar yang akan diupload
             $upload_image = $_FILES['image'];
@@ -246,6 +252,9 @@ class User extends CI_Controller
                 }
             }
 
+            $id_user = $this->session->userdata('id');
+
+            $this->db->set('fullname', $fullname);
             $this->db->where('id', $id_user);
             $this->db->update('users');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">

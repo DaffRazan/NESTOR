@@ -66,8 +66,8 @@
                                 <th scope="col">Jenis</th>
                                 <th scope="col">Berat</th>
                                 <th scope="col">Harga</th>
-                                <th scope="col">Tanggal (YYYY-MM-DD)</th>
-                                <th scope="col">Waktu (WIB Zone)</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Waktu (WIB)</th>
                                 <th scope="col">Akses Data <button type="button" class="btn btn-sm btn-info ml-2" data-trigger="focus" data-toggle="popover" title="Penghapusan data" data-content="Saat Anda salah memasukkan isian setoran (typo), Anda dapat menghapus data tersebut. Penghapusan data hanya dapat dilakukan dalam 1x24 jam waktu setor."><i class="fas fa-info"></i></button></th>
 
                             </tr>
