@@ -78,6 +78,221 @@
 
   <!-- end of grafik section-->
 
+  <!-- Portfolio Grid Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Hari Ini</h2>
+      <hr class="star-dark mb-5">
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <a class="portfolio-item d-block mx-auto" href="#" data-toggle="modal" data-target="#termurah">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio/termurah.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a class="portfolio-item d-block mx-auto" href="#" data-toggle="modal" data-target="#termahal">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio/termahal.png" alt="">
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <a class="portfolio-item d-block mx-auto" href="#" data-toggle="modal" data-target="#tersedikit">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio/tersedikit.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a class="portfolio-item d-block mx-auto" href="#" data-toggle="modal" data-target="#terbanyak">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <i class="fas fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio/terbanyak.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Modals -->
+
+  <!-- Portfolio Modal 1 -->
+  <div class="modal fade" id="termurah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-9 mx-auto">
+                <h2 class="text-secondary text-uppercase mb-0">Termurah Hari Ini</h2>
+                <hr class="star-dark mb-5">
+                <img class="img-fluid mb-5" src="<?= base_url('assets/'); ?>img/portfolio/termurah.png" alt="">
+                <div class="hijau">
+                  <?php if (empty($setor1)) :  ?>
+                    <h3>Maaf, Hari ini Belum Tersedia Data Setoran</h3>
+                  <?php endif; ?>
+
+                  <?php if (!empty($setor1)) :  ?>
+                    <?php foreach ($setor1 as $s) : ?>
+                      <h3><?= ucfirst($s['jenis']); ?></h3>
+                      <h4><?= "Rp. " . number_format($s['harga'], 0, ",", "."); ?></h4>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio Modal 2 -->
+  <div class="modal fade" id="termahal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-9 mx-auto">
+                <h2 class="text-secondary text-uppercase mb-0">Termahal Hari Ini</h2>
+                <hr class="star-dark mb-5">
+                <img class="img-fluid mb-5" src="<?= base_url('assets/'); ?>img/portfolio/termahal.PNG" alt="">
+                <div class="merah">
+                  <?php if (empty($setor2)) :  ?>
+                    <h3>Maaf, Hari ini Belum Tersedia Data Setoran</h3>
+                  <?php endif; ?>
+
+                  <?php if (!empty($setor2)) :  ?>
+                    <?php foreach ($setor2 as $s) : ?>
+                      <h3><?= ucfirst($s['jenis']); ?></h3>
+                      <h4><?= "Rp. " . number_format($s['harga'], 0, ",", "."); ?></h4>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 3 -->
+  <div class="modal fade" id="tersedikit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-9 mx-auto">
+                <h2 class="text-secondary text-uppercase mb-0">Tersedikit Hari Ini</h2>
+                <hr class="star-dark mb-5">
+                <img class="img-fluid mb-5" src="<?= base_url('assets/'); ?>img/portfolio/tersedikit.png" alt="">
+                <div class="merah">
+                  <?php if (empty($setor3)) :  ?>
+                    <h3>Maaf, Hari ini Belum Tersedia Data Setoran</h3>
+                  <?php endif; ?>
+
+                  <?php if (!empty($setor3)) :  ?>
+                    <?php foreach ($setor3 as $s) : ?>
+                      <h3><?= ucfirst($s['jenis']); ?></h3>
+                      <h4><?= number_format($s['berat'], 0, ",", ".")  . " kg"; ?></h4>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 4 -->
+  <div class="modal fade" id="terbanyak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-9 mx-auto">
+                <h2 class="text-secondary text-uppercase mb-0">Terbanyak Hari Ini</h2>
+                <hr class="star-dark mb-5">
+                <img class="img-fluid mb-5" src="<?= base_url('assets/'); ?>img/portfolio/terbanyak.png" alt="">
+                <div class="hijau">
+                  <?php if (empty($setor4)) :  ?>
+                    <h3>Maaf, Hari ini Belum Tersedia Data Setoran</h3>
+                  <?php endif; ?>
+
+                  <?php if (!empty($setor4)) :  ?>
+                    <?php foreach ($setor4 as $s) : ?>
+                      <h3><?= ucfirst($s['jenis']); ?></h3>
+                      <h4><?= number_format($s['berat'], 0, ",", ".")  . " kg"; ?></h4>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- About Section -->
   <section class="white-section bg-primary text-white mb-0" id="about">
     <div class="container-fluid"><br>
