@@ -85,4 +85,35 @@ class Setor_model extends CI_Model
         $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 WEEK) ORDER BY tanggal ASC');
         return $this->db->get('setor')->result_array();
     }
+
+    //Untuk Hari ini
+
+    public function termurah()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY harga ASC LIMIT 1');
+        //'DATE(tanggal)=CURDATE()ORDER BY harga DESC LIMIT 1'
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function termahal()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY harga DESC LIMIT 1');
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function tersedikit()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY berat ASC LIMIT 1');
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function terbanyak()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY berat DESC LIMIT 1');
+        return $this->db->get('setor')->result_array();
+    }
 }
