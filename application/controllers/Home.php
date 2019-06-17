@@ -16,6 +16,10 @@ class Home extends CI_Controller
         $data['users'] = $this->db->get_where('users', ['username' =>
         $this->session->userdata('username')])->row_array();
         $data['setor'] = $this->Setor_model->grafikperMinggu();
+        $data['setor1'] = $this->Setor_model->termurah();
+        $data['setor2'] = $this->Setor_model->termahal();
+        $data['setor3'] = $this->Setor_model->tersedikit();
+        $data['setor4'] = $this->Setor_model->terbanyak();
 
         if ($this->session->userdata('username')) {
             $this->load->view('navbar_user', $data);
