@@ -8,6 +8,32 @@ class Setor_model extends CI_Model
         return $this->db->get('setor')->result_array();
     }
 
+    public function getMaxHarga()
+    {
+        $this->db->select_max('harga');
+        // $this->db->where('`harga` = (select max(harga) from `setor`)', NULL, FALSE);
+        return $this->db->get('setor')->row_array();
+    }
+
+    public function getMinHarga()
+    {
+        $this->db->select_min('harga');
+        // $this->db->where('`harga` = (select max(harga) from `setor`)', NULL, FALSE);
+        return $this->db->get('setor')->row_array();
+    }
+
+    public function getTotalHarga()
+    {
+        $this->db->select_sum('harga');
+        return $this->db->get('setor')->row_array();
+    }
+
+    public function getTotalBerat()
+    {
+        $this->db->select_sum('berat');
+        return $this->db->get('setor')->row_array();
+    }
+
     // Beginning of Order By
     public function OrderByHargaAsc()
     {
@@ -51,5 +77,43 @@ class Setor_model extends CI_Model
     {
         $this->db->where('id_setor', $id_setor);
         $this->db->delete('setor');
+    }
+
+    public function grafikperMinggu()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 WEEK) ORDER BY tanggal ASC');
+        return $this->db->get('setor')->result_array();
+    }
+
+    //Untuk Hari ini
+
+    public function termurah()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY harga ASC LIMIT 1');
+        //'DATE(tanggal)=CURDATE()ORDER BY harga DESC LIMIT 1'
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function termahal()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY harga DESC LIMIT 1');
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function tersedikit()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY berat ASC LIMIT 1');
+        return $this->db->get('setor')->result_array();
+    }
+
+    public function terbanyak()
+    {
+        $this->db->select('*');
+        $this->db->where('tanggal > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY berat DESC LIMIT 1');
+        return $this->db->get('setor')->result_array();
     }
 }

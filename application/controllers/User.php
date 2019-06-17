@@ -9,8 +9,9 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model('User_model');
         $this->load->library('form_validation');
-        $this->load->library('session');
+        $this->load->model('Setor_model');
         $this->load->helper(array('form', 'url'));
+        $this->load->helper('tglindo');
     }
 
     public function index()
@@ -19,6 +20,23 @@ class User extends CI_Controller
             $data['title'] = 'Nestor - Homepage User';
             $data['users'] = $this->db->get_where('users', ['username' =>
             $this->session->userdata('username')])->row_array();
+
+            //set userdata perdata setoran
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor1'] = $this->Setor_model->getMaxHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor2'] = $this->Setor_model->getMinHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor3'] = $this->Setor_model->getTotalHarga();
+            }
+
+            if ($this->db->where('id_user', $this->session->userdata('id'))) {
+                $data['setor4'] = $this->Setor_model->getTotalBerat();
+            }
 
             $this->load->view('navbar_user', $data);
             $this->load->view('homepage_user', $data);
@@ -93,6 +111,16 @@ class User extends CI_Controller
         }
     }
 
+    public function mainProfil()
+    {
+        $data['title'] = 'Nestor - Data Profil Kapal';
+        $data['users'] = $this->db->get_where('users', ['username' =>
+        $this->session->userdata('username')])->row_array();
+
+        $this->load->view('navbar_user', $data);
+        $this->load->view('main_profil', $data);
+    }
+
     public function profil()
     {
         $data['title'] = 'Nestor - Data Profil Kapal';
@@ -124,11 +152,12 @@ class User extends CI_Controller
         //Aturan/validasi untuk setiap kolom
         $this->form_validation->set_rules('no_kpl', 'Nomor Kapal', 'required', ['required' => 'Nomor Kapal Perlu diisi']);
         $this->form_validation->set_rules('nama_kpl', 'Nama Kapal', 'required', ['required' => 'Nama Kapal Perlu diisi']);
+        $this->form_validation->set_rules('tahun_kpl', 'Tahun pembuatan kapal', 'required|numeric', ['required' => 'Alamat Perlu diisi']);
         $this->form_validation->set_rules('bendera', 'Asal Negara', 'required', ['required' => 'Asal negara Perlu diisi']);
         $this->form_validation->set_rules('nama_bos', 'Nama Pemilik', 'required', ['required' => 'Nama pemilik Perlu diisi']);
         $this->form_validation->set_rules('alamat_bos', 'Alamat', 'required', ['required' => 'Alamat Perlu diisi']);
-        $this->form_validation->set_rules('kewarganegaraan', 'Kewarganegaraan', 'required', ['required' => 'kewarganegraaan Perlu diisi']);
-        $this->form_validation->set_rules('no_ponsel', 'Nomor Telepon/hp', 'required', ['required' => 'No.Telepon/HP Perlu diisi']);
+        $this->form_validation->set_rules('kewarganegaraan', 'Kewarganegaraan', 'required', ['required' => 'kewarganegaraaan Perlu diisi']);
+        $this->form_validation->set_rules('no_ponsel', 'Nomor Telepon/hp', 'required|max_length[12]', ['required' => 'No.Telepon/HP Perlu diisi']);
 
         //kalau salah isi form
         if ($this->form_validation->run() == false) {
@@ -158,9 +187,14 @@ class User extends CI_Controller
         $this->form_validation->set_rules('nama_kpl', 'Nama Kapal', 'required', ['required' => 'Nama Kapal Perlu diisi']);
         $this->form_validation->set_rules('bendera', 'Asal Negara', 'required', ['required' => 'Asal negara Perlu diisi']);
         $this->form_validation->set_rules('nama_bos', 'Nama Pemilik', 'required', ['required' => 'Nama pemilik Perlu diisi']);
+        $this->form_validation->set_rules('tahun_kpl', 'Tahun pembuatan kapal', 'required|numeric', ['required' => 'Alamat Perlu diisi']);
         $this->form_validation->set_rules('alamat_bos', 'Alamat', 'required', ['required' => 'Alamat Perlu diisi']);
-        $this->form_validation->set_rules('kewarganegaraan', 'Kewarganegaraan', 'required', ['required' => 'kewarganegraaan Perlu diisi']);
-        $this->form_validation->set_rules('no_ponsel', 'Nomor Telepon/hp', 'required', ['required' => 'No.Telepon/HP Perlu diisi']);
+        $this->form_validation->set_rules('kewarganegaraan', 'Kewarganegaraan', 'required', ['required' => 'kewarganegaraaan Perlu diisi']);
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email', ['required' => 'kewarganegaraaan Perlu diisi']);
+        $this->form_validation->set_rules('no_ponsel', 'Nomor Telepon/hp', 'required|max_length[12]|numeric', [
+            'required' => 'No.Telepon/HP Perlu diisi',
+            'max_length' => 'No.Telepon/HP maksimal 12 karakter'
+        ]);
 
         //kalau salah isi form
         if ($this->form_validation->run() == false) {
@@ -187,17 +221,18 @@ class User extends CI_Controller
 
     public function ubahPhoto()
     {
-        $data['title'] = 'Nestor - Ubah Photo User';
-        $data['users'] = $this->db->get_where('users', ['username' =>
-        $this->session->userdata('username')])->row_array();
+        $data['title'] = 'Nestor - Ubah Photo/Nama User';
+        $data['users'] = $this->db->get_where('users', ['id' =>
+        $this->session->userdata('id')])->row_array();
 
-        $this->form_validation->set_rules('username', 'username', 'trim');
+        $this->form_validation->set_rules('fullname', 'Nama', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('navbar_user', $data);
             $this->load->view('ubah_photo', $data);
         } else {
-            $username = $this->input->post('username');
+            $id_user = $this->session->userdata('id');
+            $fullname =  $this->input->post('fullname', true);
 
             //cek jika ada gambar yang akan diupload
             $upload_image = $_FILES['image'];
@@ -217,10 +252,13 @@ class User extends CI_Controller
                 }
             }
 
-            $this->db->where('username', $username);
+            $id_user = $this->session->userdata('id');
+
+            $this->db->set('fullname', $fullname);
+            $this->db->where('id', $id_user);
             $this->db->update('users');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Gambar berhasil diubah!
+                Profil berhasil diubah!
                 </div>');
             redirect('user/profiluser');
         }

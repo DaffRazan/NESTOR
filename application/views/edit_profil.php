@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label> Umur Kapal :</label>
-                                <input id="umur_kpl" class="form-control" style="width:30%;" type="text" name="umur_kpl" value="<?= $data_profil['umur_kpl']; ?>">
+                                <input id="tahun_kpl" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= $data_profil['tahun_kapal']; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Asal Negara :</label>
@@ -73,13 +73,15 @@
                                 <label>Email :</label>
                                 <input id="email" class="form-control" style="width:50%;" type="text" name="email" value="<?= $data_profil['email']; ?>">
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                                <a href="<?= base_url('user/profil'); ?>"><button type="button" class="btn btn-warning float-right mr-2 text-white">Kembali</button></a>
                             </div>
                             <br>
                         </div>
                     </div>
                 </form>
+
             </div>
         </div>
 

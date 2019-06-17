@@ -11,7 +11,7 @@
                 <?php endif; ?>
 
                 <?php if (!empty($setor)) :  ?>
-                    <a href="<?= base_url('setor/displayGrafikBerat') ?>" class="btn btn-success mb-3 float-right">Liat grafik berat ikan</a>
+                    <a href="<?= base_url('setor/displayGrafikBerat') ?>" class="btn btn-success mb-3 float-right">Lihat grafik berat ikan</a>
                     <canvas id="myChart" width="50%" height="50%"></canvas>
                 <?php endif; ?>
             </div>
@@ -47,7 +47,7 @@
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'pie',
             data: {
                 labels: [
                     <?php
@@ -103,7 +103,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Harga Setoran Ikan <?= $users['username']; ?>',
+                    text: 'Grafik Harga Setoran Ikan <?= $users['fullname']; ?>',
                     fontSize: 30
                 },
                 scales: {

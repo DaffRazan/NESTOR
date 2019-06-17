@@ -6,20 +6,48 @@
     <div class="container graph-container">
         <div class="card justify-content-center mx-auto" style="width: 50rem;">
             <div class="card-body">
-                <a href="<?= base_url('setor/displayGrafikHarga') ?>" class="btn btn-success mb-3 float-right">Lihat grafik harga ikan</a>
 
-                <canvas id="myChart" width="50%" height="50%"></canvas>
+                <canvas id="myChart" width="60%" height="40%"></canvas>
+
 
             </div>
         </div>
     </div>
 
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Jenis Ikan</th>
+                        <th scope="col">Berat Ikan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($setor as $s) : ?>
 
+                        <tr>
+                            <th scope="row"><?= $i; ?></th>
+                            <td><?= date_indo($s['tanggal']); ?></td>
+                            <td><?= ucfirst($s['jenis']); ?></td>
+                            <td><?= number_format($s['berat'], 0, ",", ".")  . " kg"; ?></td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
 </header>
 
 <body>
     <div class="copyright text-center text-white">
-        <div class="container-fluid">
+        <div class="container-fluid" style="height:200px;">
             <h3>Hubungi Kami</h3>
             <span><i class="fas fa-envelope mr-2"></i>nestor@gmail.com</span>
             <span><i class="fas fa-phone mb-3 ml-2 mr-2"></i>082276934634</span>
@@ -101,7 +129,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Grafik Berat Setoran Ikan <?= $users['fullname']; ?>',
+                    text: 'Grafik Berat Setoran Ikan dalam 1 Minggu Terakhir ',
                     fontSize: 30
                 },
                 scales: {

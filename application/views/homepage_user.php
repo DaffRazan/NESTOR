@@ -5,7 +5,14 @@
         <img class="profile-pic img-fluid mb-5 d-block mx-auto" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
         <hr class="star-light">
         <div class="container bg-primary" style="width:50%;">
-            <h2 class="font-weight-light mb-0"><?= "Selamat datang, " . $users['username']; ?></h2>
+            <h2 class="font-weight-light mb-0"> Selamat datang, <span class="text-dark"><?= ucwords($users['fullname']); ?></span></h2><br>
+            <h4 class="text-warning">Track Record Penangkapan Ikan tahun
+                <?= date('Y'); ?>
+            </h4> <br>
+            <h4>Harga ikan paling mahal: <span class="text-warning"><?= number_format($setor1['harga'], 0, ",", "."); ?></span></h4>
+            <h4>Harga ikan paling murah: <span class="text-warning"><?= number_format($setor2['harga'], 0, ",", "."); ?></span></h4>
+            <h4>Total harga setor: <span class="text-warning"><?= "Rp. " . number_format($setor3['harga'], 0, ",", "."); ?></span></h4>
+            <h4>Total berat setor: <span class="text-warning"><?= number_format($setor4['berat'], 0, ",", ".") . " kg"; ?></span></h4>
         </div>
         <?= $this->session->flashdata('pesan'); ?>
     </div>
@@ -41,7 +48,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="<?= base_url('assets/'); ?>js/freelancer.min.js"></script>
-
 </body>
 
 </html>

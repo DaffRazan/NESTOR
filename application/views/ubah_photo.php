@@ -5,12 +5,8 @@
     <div class="container">
         <title> <?= $title ?> </title>
         <div class="card bg-secondary mb-3 text-center">
-            <div class="card-header text-center">
-                <h5 style="color: yellow;">Username: <?= $users['username']; ?></h5>
-            </div>
+            <h4 class="card-title mt-3 text-center text-warning pb-5">Ubah Photo/Nama User</h4>
             <div class="card-body">
-                <h4 class="card-title text-center text-primary pb-5">Ubah Photo User</h4>
-
                 <div class="row">
                 </div>
                 <div class="card mb-3 mx-auto p-4 bg-secondary" style="max-width: 540px;">
@@ -21,8 +17,8 @@
                             <?= form_open_multipart('user/ubahphoto'); ?>
                             <div class="form-group">
                                 <div class="">
-                                    <label class="mr-2" for="username">Username</label>
-                                    <input type="text" class="" id="username" name="username" value="<?= $users['username']; ?>" readOnly>
+                                    <label class="mr-2" for="fullname">Nama</label>
+                                    <input type="text" id="fullname" name="fullname" value="<?= $users['fullname']; ?>">
                                 </div>
                             </div>
                             <div class="form-group">

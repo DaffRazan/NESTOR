@@ -19,7 +19,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
-                        <a href="<?= base_url('user/ubahphoto'); ?>" class="btn btn-success mb-4 mr-4">Ganti Photo</a>
+                        <a href="<?= base_url('user/ubahphoto'); ?>" class="btn btn-success mb-4 mr-4">Ganti Photo/Nama</a>
                         <a href="<?= base_url('user/ubahpassword'); ?>" class="btn btn-warning text-white mb-4">Ubah Password</a>
                     </div>
                 </div>
@@ -29,10 +29,11 @@
                             <img class="card-img" style="width:60%;" src="<?= base_url('assets/img/profile/' . $users['image']); ?>" alt="">
                         </div>
                         <div class="col-md-9">
-                            <h5 class="card-text text-success">
-                                User ID: <?= $users['id']; ?><br>
-                                Username: <?= $users['username']; ?> <br>
-                                Email: <?= $users['email']; ?> <br>
+                            <h5 class="card-text text-secondary">
+                                User ID: <span class="text-primary"><?= $users['id']; ?></span><br>
+                                Nama: <span class="text-primary"><?= ucwords($users['fullname']); ?></span> <br>
+                                Username: <span class="text-primary"><?= $users['username']; ?></span> <br>
+                                Email: <span class="text-primary"><?= $users['email']; ?></span> <br>
                             </h5>
                         </div>
                     </div>

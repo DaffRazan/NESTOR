@@ -2,6 +2,7 @@
 <html lang="en">
 
 <header class="masthead bg-primary text-white" style="background-image: url('../assets/img/carousel/nelayan-bg.jpg')">
+    <!-- tes edit front end -->
     <div class="container">
         <title> <?= $title ?> </title>
         <div class="card bg-secondary mb-3">
@@ -33,7 +34,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-secondary"> Nama Kapal: <span class="text-primary"><?= ucwords($data_profil['nama_kpl']); ?> </span></li>
                                 <li class="list-group-item text-secondary"> Nomor Kapal: <span class="text-primary"><?= $data_profil['no_kpl']; ?> </span></li>
-                                <li class="list-group-item text-secondary">Umur Kapal: <span class="text-primary"><?= $data_profil['umur_kpl']; ?> </span></li>
+                                <li class="list-group-item text-secondary">Tahun Pembuatan Kapal: <span class="text-primary"><?= $data_profil['tahun_kapal']; ?> </span></li>
                                 <li class="list-group-item text-secondary">Kewarganegaraan: <span class="text-primary"><?= ucwords($data_profil['bendera']); ?> </span></li>
                                 <li class="list-group-item text-secondary"> Jumlah ABK: <span class="text-primary"><?= $data_profil['jum_ABK']; ?> </span></li>
                             </ul>

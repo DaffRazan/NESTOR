@@ -31,8 +31,7 @@
         <div class="card">
             <div class="card-header text-center">
                 <h5>Riwayat Setoran Data Ikan</h5>
-                <p class="card-text mb-0"><?= "Nama: " . $users['fullname']; ?></p>
-                <p class="card-text"><?= "ID User: " . $users['id']; ?></p>
+                <p class="card-text "><?= "Profil User: " . $users['username']; ?></p>
             </div>
             <div class="">
 

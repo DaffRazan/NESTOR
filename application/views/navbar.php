@@ -33,7 +33,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"><i class="fas fa-address-card"></i> Tentang</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('nelayan'); ?>"><i class="fas fa-sign-in-alt"></i> Masuk</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('nelayan/index'); ?>"><i class="fas fa-sign-in-alt"></i> Masuk</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?= base_url('nelayan/signup'); ?>"><i class="fas fa-user-plus"></i> daftar</a>
