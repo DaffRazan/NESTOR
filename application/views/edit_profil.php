@@ -29,8 +29,8 @@
                                 <small class="text-danger"><?= form_error('no_kpl'); ?></small>
                             </div>
                             <div class="form-group">
-                                <label> Umur Kapal :</label>
-                                <input id="tahun_kpl" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= $data_profil['tahun_kapal']; ?>">
+                                <label> Tahun Pembuatan Kapal :</label>
+                                <input id="tahun_kapal" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= $data_profil['tahun_kapal']; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Asal Negara :</label>
