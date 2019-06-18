@@ -87,7 +87,7 @@
                                 <td><?= date_indo($item['tanggal']); ?></td>
                                 <td><?= $item['waktu']; ?></td>
                                 <td>
-                                    <?php if ($item['tanggal'] == date('Y-m-d')) : ?>
+                                    <?php if ($item['tanggal'] > date('Y-m-d')) : ?>
                                         <form>
                                             <label class="checkbox-inline">
                                                 <input type="checkbox" value="" name="check">

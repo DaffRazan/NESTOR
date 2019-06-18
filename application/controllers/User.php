@@ -152,7 +152,7 @@ class User extends CI_Controller
         //Aturan/validasi untuk setiap kolom
         $this->form_validation->set_rules('no_kpl', 'Nomor Kapal', 'required', ['required' => 'Nomor Kapal Perlu diisi']);
         $this->form_validation->set_rules('nama_kpl', 'Nama Kapal', 'required', ['required' => 'Nama Kapal Perlu diisi']);
-        $this->form_validation->set_rules('tahun_kpl', 'Tahun pembuatan kapal', 'required|numeric', ['required' => 'Alamat Perlu diisi']);
+        $this->form_validation->set_rules('tahun_kpl', 'Tahun pembuatan kapal', 'required|numeric', ['required' => 'Tahun pembuatan kapal perlu diisi']);
         $this->form_validation->set_rules('bendera', 'Asal Negara', 'required', ['required' => 'Asal negara Perlu diisi']);
         $this->form_validation->set_rules('nama_bos', 'Nama Pemilik', 'required', ['required' => 'Nama pemilik Perlu diisi']);
         $this->form_validation->set_rules('alamat_bos', 'Alamat', 'required', ['required' => 'Alamat Perlu diisi']);
