@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label> Tahun Pembuatan Kapal :</label>
-                                <input id="tahun_kpl" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= set_value('tahun_kpl'); ?>">
+                                <input id="tahun_kapal" class="form-control" style="width:30%;" type="text" name="tahun_kpl" value="<?= set_value('tahun_kpl'); ?>">
                             </div>
                             <div class="form-group">
                                 <label>Asal Negara :</label>

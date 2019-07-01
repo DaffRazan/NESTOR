@@ -9,6 +9,7 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title text-center text-warning">Anda harus mengisi data profil kapal dahulu sebelum menyetor</h4>
+                    <a class="btn btn-primary" href="<?= base_url('user/isiProfil'); ?>">Isi Profil Kapal</a>
                 </div>
             </div>
         <?php endif; ?>
